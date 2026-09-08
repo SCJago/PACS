@@ -5,14 +5,21 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - clean_offers.csv                  
-#   - select_offers.csv      
+#   - clean_offers.csv                     (clean tender offers)
+#
+#   - select_offers.csv                    (selected offers produced by
+#                                          05_clean_model_offer_seelction.R)
 #   - community_name_crosswalk.csv      
 #   - landrace_name_id_crosswalk.csv    
-#   - Use_data_final.csv
-#   - Landrace_size_data_clean.csv
-#   - enset_per_farmer_by_community.csv  
-#   - gender_balance.csv
+#
+#   - Use_data_final.csv                   (trait/use scores per landrace)
+#
+#   - Landrace_size_data_clean.csv         (landrace-level plant measurements)
+#
+#   - enset_per_farmer_by_community.csv    (mean enset plants grown per farmer
+#                                           by community) 
+#
+#   - gender_balance.csv                   (farmer gender balance by community)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
