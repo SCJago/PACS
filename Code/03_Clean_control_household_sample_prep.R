@@ -23,8 +23,8 @@
 # OUTPUTS GENERATED
 # ----------------------
 #   hh_boot_35_37E.csv / hh_boot_35_37E.rds   bootstrap-ready control
-#       household pool restricted to 35-37 deg E (used by the downstream
-#       pooled bootstrap script).
+#       household pool restricted to 35-37 deg E (used by 04_clean_bootstrap_
+#       analysis_code.R).
 #
 #   agroecological_map_with_zoom_inset.png    study area map: agroecological
 #       zones, treated communities, used/excluded control households,
