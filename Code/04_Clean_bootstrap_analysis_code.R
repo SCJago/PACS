@@ -4,8 +4,11 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - hh_boot_35_37E.rds          (control household data)
-#   - T1_T2_rarity_assessment_data.csv  (treated community data)
+#   - hh_boot_35_37E.rds          (bootstrap-ready control household pool
+#                                  produced by 03_clean_control_household_
+#                                  sample_prep.R)
+#   - T1_T2_rarity_assessment_data.csv  (community x landrace survey data,
+#                                        T1 baseline + T2 follow-up)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
