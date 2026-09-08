@@ -4,9 +4,12 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - landrace_effect_analysis_df_long.csv   
-#     produced by Clean_landrace_rarity_effect_analysis.R
-#   - select_offers.csv
+#   - landrace_effect_analysis_df_long.csv   (produced by 06_Clean_
+#                                             landrace_rarity_effect_
+#                                             analysis.R)
+#
+#   - select_offers.csv                      (produced by 05_clean_
+#                                             model_offer_selection.R)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -55,7 +58,7 @@
 #
 #   ALL SPILLOVER MODEL COEFFICIENTS: tidied coefficients for every
 #       spillover model (share, count, GBP; all four outcomes)
-#       -> model_coefficients_all.csv
+#       -> spillover_model_coefficients_all.csv
 #
 # ============================================================
 
