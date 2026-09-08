@@ -1,0 +1,536 @@
+Community_name,Location,T1_participants,T2_participants,Landrace_name,T1_9_cell,T1_no_households,T1_Landrace_avr_ind,T2_9_cell,T2_no_households,T2_Landrace_avr_ind,T1_plant_cat,T2_plant_cat,T1_farmer_cat,T2_farmer_cat,T1_9_cell_corrected,T2_9_cell_corrected,T1_rarity_status,T2_rarity_status
+"Decha, Baha Gona",Bonga,28,22,Aaki Baro,9,1,3,6,2,15,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Baha Gona",Bonga,28,22,Achecho,3,6,59,1,16,45.3125,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Decha, Baha Gona",Bonga,28,22,Adele Bocho,3,6,135,2,9,40,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Decha, Baha Gona",Bonga,28,22,Ageno,0,0,NA,0,0,0,NA,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Baha Gona",Bonga,28,22,Areko,0,0,0,3,2,35,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Decha, Baha Gona",Bonga,28,22,Bajjoo,6,3,63,6,5,13,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Decha, Baha Gona",Bonga,28,22,Barisolo,9,1,5,0,0,0,few_plants,few_plants,few_farmers,no_farmers,9,0,5,6
+"Decha, Baha Gona",Bonga,28,22,Boongo,6,1,50,9,2,7.5,many_plants,few_plants,few_farmers,few_farmers,3,9,3,5
+"Decha, Baha Gona",Bonga,28,22,Boqele Bocho,9,1,5,6,2,30,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Baha Gona",Bonga,28,22,Bumbo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Baha Gona",Bonga,28,22,Chamero,6,1,30,9,2,7.5,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Decha, Baha Gona",Bonga,28,22,Chele Bocho,1,14,200,1,14,52.14285714,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Decha, Baha Gona",Bonga,28,22,Choro,9,1,5,6,1,20,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Baha Gona",Bonga,28,22,Chuko,6,1,30,3,1,100,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Decha, Baha Gona",Bonga,28,22,Ganji Bocho,6,3,30,3,5,35,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Baha Gona",Bonga,28,22,Gayoo,9,1,10,6,2,15,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Baha Gona",Bonga,28,22,Kallo,9,1,2,7,34,4,few_plants,few_plants,few_farmers,many_farmers,9,7,5,3
+"Decha, Baha Gona",Bonga,28,22,Koremo,6,1,15,9,2,7.5,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Decha, Baha Gona",Bonga,28,22,Koche Tato,9,1,5,9,1,10,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Baha Gona",Bonga,28,22,Maaca Dami,9,1,5,9,1,20,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Baha Gona",Bonga,28,22,Mishiqo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Baha Gona",Bonga,28,22,Nobo,5,10,50,1,22,50.68181818,many_plants,many_plants,medium_farmers,many_farmers,2,1,2,1
+"Decha, Baha Gona",Bonga,28,22,Otino,9,5,4,7,34,1,few_plants,few_plants,few_farmers,many_farmers,9,7,5,3
+"Decha, Baha Gona",Bonga,28,22,Qupho,9,1,5,7,34,1,few_plants,few_plants,few_farmers,many_farmers,9,7,5,3
+"Decha, Baha Gona",Bonga,28,22,Shallaako,3,6,80,3,4,73.75,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Decha, Baha Gona",Bonga,28,22,Taayo,9,2,2,6,1,15,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Baha Gona",Bonga,28,22,Utiro,9,2,7,9,2,10,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Baha Gona",Bonga,28,22,Waango,9,2,13,9,2,10,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Baha Gona",Bonga,28,22,Geno,0,0,0,7,34,NA,few_plants,NA,no_farmers,many_farmers,0,7,6,3
+"Decha, Baha Gona",Bonga,28,22,Wuiro,9,1,10,0,0,0,medium_plants,few_plants,few_farmers,no_farmers,6,0,4,6
+"Gimbo, Dakiti",Bonga,15,15,Achecho,2,4,129,3,5,27,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Gimbo, Dakiti",Bonga,15,15,Adele Bocho,4,7,55,5,7,16.42857143,medium_plants,medium_plants,medium_farmers,medium_farmers,5,5,3,3
+"Gimbo, Dakiti",Bonga,15,15,Ageno,9,3,3,9,1,10,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Gimbo, Dakiti",Bonga,15,15,Alabo,5,6,62,0,0,0,medium_plants,few_plants,medium_farmers,no_farmers,5,0,3,6
+"Gimbo, Dakiti",Bonga,15,15,Areko,9,2,6,5,6,11.66666667,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Gimbo, Dakiti",Bonga,15,15,Bajjoo,6,1,100,5,7,11,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Gimbo, Dakiti",Bonga,15,15,Badado,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Borogodo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Bumbo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Chele Areko,0,0,0,9,3,10,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Gimbo, Dakiti",Bonga,15,15,Chele Bocho,3,2,400,1,15,21.33333333,many_plants,many_plants,few_farmers,many_farmers,3,1,3,1
+"Gimbo, Dakiti",Bonga,15,15,Ganji Bocho,3,1,200,3,1,30,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Gimbo, Dakiti",Bonga,15,15,Gayoo,0,0,0,9,2,4,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Gimbo, Dakiti",Bonga,15,15,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Nobo,5,NA,NA,5,10,13,NA,medium_plants,NA,medium_farmers,5,5,3,3
+"Gimbo, Dakiti",Bonga,15,15,Goosheno,0,0,0,9,3,10,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Gimbo, Dakiti",Bonga,15,15,Gushiroo,6,2,16,6,3,11.66666667,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Gimbo, Dakiti",Bonga,15,15,Kallo,9,2,5,9,1,10,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Gimbo, Dakiti",Bonga,15,15,Koremo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Maaca Dami,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Qeeqero,0,0,0,9,1,10,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Gimbo, Dakiti",Bonga,15,15,Koche Tato,0,0,0,9,2,8,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Gimbo, Dakiti",Bonga,15,15,Shoto,0,0,0,7,20,5.35,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Gimbo, Dakiti",Bonga,15,15,Shallaako,6,2,115,3,3,21.66666667,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Gimbo, Dakiti",Bonga,15,15,Shuri,6,3,NA,9,3,10,NA,few_plants,few_farmers,few_farmers,6,9,4,5
+"Gimbo, Dakiti",Bonga,15,15,Tarkosho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Dakiti",Bonga,15,15,Taayo,0,0,0,3,1,100,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Gimbo, Dakiti",Bonga,15,15,Otino,2,4,81,5,7,15,medium_plants,medium_plants,medium_farmers,medium_farmers,5,5,3,3
+"Gimbo, Dakiti",Bonga,15,15,Waango,3,2,100,6,5,14,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Gimbo, Dakiti",Bonga,15,15,Wuiro,3,2,250,4,9,18.33333333,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Gimbo, Yeyibito",Bonga,20,20,Adele Bocho,2,8,48,2,7,46.42857143,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Gimbo, Yeyibito",Bonga,20,20,Ageno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Bajjoo,6,3,22,5,8,38.75,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Gimbo, Yeyibito",Bonga,20,20,Chele Areko,5,3,18,8,2,22.5,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Gimbo, Yeyibito",Bonga,20,20,Chele Bocho,1,13,123,1,17,145.8823529,many_plants,many_plants,medium_farmers,many_farmers,2,1,2,1
+"Gimbo, Yeyibito",Bonga,20,20,Gaaramanji,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Ganji Bocho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Gayoo,6,2,13,9,1,5,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Gimbo, Yeyibito",Bonga,20,20,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Goosheno,7,1,50,8,3,65,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Gimbo, Yeyibito",Bonga,20,20,Gudicho,7,5,38,4,8,45.625,medium_plants,many_plants,medium_farmers,medium_farmers,5,2,3,2
+"Gimbo, Yeyibito",Bonga,20,20,Hicaawi,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Mishiqo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Nache Nobo,1,10,62,1,NA,NA,many_plants,NA,medium_farmers,NA,2,1,2,1
+"Gimbo, Yeyibito",Bonga,20,20,Nobo,4,4,31,1,12,44.16666667,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Gimbo, Yeyibito",Bonga,20,20,Qattaano,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Qeeqero,9,1,8,9,1,3,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Gimbo, Yeyibito",Bonga,20,20,Shallaako,8,1,15,7,27,3,medium_plants,few_plants,few_farmers,many_farmers,6,7,4,3
+"Gimbo, Yeyibito",Bonga,20,20,Shimmo,8,1,20,9,1,2,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Gimbo, Yeyibito",Bonga,20,20,Shuri,5,4,10,8,3,29,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Gimbo, Yeyibito",Bonga,20,20,Taayo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Tuutto,8,2,10,8,5,36,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Gimbo, Yeyibito",Bonga,20,20,Otino,1,11,40,1,10,66,medium_plants,many_plants,medium_farmers,medium_farmers,5,2,3,2
+"Gimbo, Yeyibito",Bonga,20,20,Waango,9,1,10,8,2,40,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Gimbo, Yeyibito",Bonga,20,20,Wuiro,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Yeyibito",Bonga,20,20,Bumbi,0,0,0,7,27,2,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Gimbo, Yeyibito",Bonga,20,20,Chele Gushiro,0,0,0,7,27,4,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Gimbo, Bita Chega",Bonga,20,NA,Areko,9,2,18.5,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Bajjoo,7,1,30,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Chele Bocho,9,2,7.5,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Adele Bocho,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Bumbo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Chele Areko,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Ciiki Areko,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Choro,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Ganji Bocho,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Goosheno,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Gudicho,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Gushiroo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Qattaano,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Shallaako,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Taayo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Chele Gushiro,9,1,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Maaca Dami,9,1,5,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Meeti Waaji,8,1,20,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Nache Areko,5,4,19.25,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Nobo,1,4,175,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Utiro,6,5,115.4,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Waango,8,2,27.5,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Bita Chega",Bonga,20,NA,Wuiro,7,1,30,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Bonga, Gedam",Bonga,22,21,Adele Bocho,1,9,17.22222222,5,4,10.75,medium_plants,medium_plants,medium_farmers,few_farmers,5,6,3,4
+"Bonga, Gedam",Bonga,22,21,Aaki Baro,1,9,17.66666667,1,9,19,medium_plants,medium_plants,medium_farmers,medium_farmers,5,5,3,3
+"Bonga, Gedam",Bonga,22,21,Areko,2,8,8.5,4,6,4.25,medium_plants,few_plants,medium_farmers,medium_farmers,5,8,3,4
+"Bonga, Gedam",Bonga,22,21,Bajoo,6,4,10.75,4,9,16.625,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Bonga, Gedam",Bonga,22,21,Bumbo,7,3,22,9,5,4.2,many_plants,few_plants,few_farmers,few_farmers,3,9,3,5
+"Bonga, Gedam",Bonga,22,21,Chagecho,9,1,5,3,21,4,medium_plants,few_plants,few_farmers,many_farmers,6,7,4,3
+"Bonga, Gedam",Bonga,22,21,Ageno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Taayo,9,1,2,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Bonga, Gedam",Bonga,22,21,Chongo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Gudicho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Gushiroo,9,1,NA,9,1,NA,NA,NA,few_farmers,few_farmers,9,9,5,5
+"Bonga, Gedam",Bonga,22,21,Keci Bocho,0,0,0,8,1,10,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Bonga, Gedam",Bonga,22,21,Koche Tato,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Maaca Dami,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Mishiqo,0,0,0,8,1,13,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Bonga, Gedam",Bonga,22,21,Nata Yudi,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Shallaako,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Taaya,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Bonga, Gedam",Bonga,22,21,Ganji Bocho,7,3,22.66666667,4,7,20,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Bonga, Gedam",Bonga,22,21,Geno,8,2,7.5,7,2,20,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Bonga, Gedam",Bonga,22,21,Kayena,8,1,4,8,1,4.5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Bonga, Gedam",Bonga,22,21,Nobo,5,5,NA,4,8,28.71428571,NA,many_plants,few_farmers,medium_farmers,5,2,3,2
+"Bonga, Gedam",Bonga,22,21,Shoto,9,1,3,9,3,2,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Bonga, Gedam",Bonga,22,21,Otino,8,2,9,8,4,NA,medium_plants,NA,few_farmers,few_farmers,6,8,4,4
+"Bonga, Gedam",Bonga,22,21,Waango,7,3,31.66666667,7,3,24.33333333,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Bonga, Gedam",Bonga,22,21,Wuiro,4,4,18,7,2,41,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Bonga, Gedam",Bonga,22,21,Yahi Bajjoo,9,2,3.5,8,3,9.666666667,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Bonga, Gedam",Bonga,22,21,Choriqaayo,0,0,0,8,3,87,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Bonga, Gedam",Bonga,22,21,Yaqqoo,8,1,20,9,2,7,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Shishinda, Dimbara Wareta",Bonga,20,20,Adele Bocho,5,5,180,5,6,20,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Shishinda, Dimbara Wareta",Bonga,20,20,Areko,9,1,30,9,1,5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Shishinda, Dimbara Wareta",Bonga,20,20,Chele Bocho,1,9,131.1111111,1,11,47.27272727,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Shishinda, Dimbara Wareta",Bonga,20,20,Ganji Bocho,0,0,0,9,2,10,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Shishinda, Dimbara Wareta",Bonga,20,20,Gayoo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Goosheno,7,1,30,9,2,6.5,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Shishinda, Dimbara Wareta",Bonga,20,20,Gudicho,5,6,22.5,8,8,9.75,few_plants,medium_plants,medium_farmers,medium_farmers,8,5,4,3
+"Shishinda, Dimbara Wareta",Bonga,20,20,Gushiroo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Kallo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Maaca Dami,0,0,0,9,1,1,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Shishinda, Dimbara Wareta",Bonga,20,20,Mocho,7,1,30,6,1,20,few_plants,many_plants,few_farmers,few_farmers,9,3,5,3
+"Shishinda, Dimbara Wareta",Bonga,20,20,Nobo,4,6,49.16666667,5,7,20,medium_plants,many_plants,medium_farmers,medium_farmers,5,2,3,2
+"Shishinda, Dimbara Wareta",Bonga,20,20,Qupho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Shallaako,0,0,0,9,1,5,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Shishinda, Dimbara Wareta",Bonga,20,20,Shimmo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Shuri,8,1,50,9,5,6.2,medium_plants,few_plants,few_farmers,medium_farmers,6,8,4,4
+"Shishinda, Dimbara Wareta",Bonga,20,20,Shubo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Taayo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Tuutto,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Utiro,2,8,168.75,2,8,21.875,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Shishinda, Dimbara Wareta",Bonga,20,20,Waango,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Wuiro,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Yeebeno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shishinda, Dimbara Wareta",Bonga,20,20,Choro,0,0,0,4,20,10,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Shishinda, Dimbara Wareta",Bonga,20,20,Yude Aafo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Achecho,5,6,28.33333333,4,7,17.85714286,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Decha, Modiyo Gombera",Bonga,25,20,Bajjoo,6,5,25,2,12,12.72727273,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Decha, Modiyo Gombera",Bonga,25,20,Chele Bocho,4,5,110,1,12,58.63636364,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Decha, Modiyo Gombera",Bonga,25,20,Ciiki Areko,9,1,10,3,20,5,few_plants,few_plants,few_farmers,many_farmers,9,7,5,3
+"Decha, Modiyo Gombera",Bonga,25,20,Choro,7,2,40,7,5,89,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Decha, Modiyo Gombera",Bonga,25,20,Ageno,9,1,NA,9,1,NA,NA,NA,few_farmers,few_farmers,9,9,5,5
+"Decha, Modiyo Gombera",Bonga,25,20,Areko,0,0,0,9,2,4,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Decha, Modiyo Gombera",Bonga,25,20,Badado,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Butecho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Giferoo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Gushiroo,0,0,0,3,20,5,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Decha, Modiyo Gombera",Bonga,25,20,Maaca Dami,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Manjiyo,0,0,0,8,1,10,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Decha, Modiyo Gombera",Bonga,25,20,Qattaano,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Shoto,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Modiyo Gombera",Bonga,25,20,Tambo,0,0,0,9,1,3,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Decha, Modiyo Gombera",Bonga,25,20,Yuuqo,0,0,0,9,2,6.5,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Decha, Modiyo Gombera",Bonga,25,20,Keco,8,1,20,8,3,9.666666667,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Modiyo Gombera",Bonga,25,20,Mashange,9,1,50,2,20,4,many_plants,few_plants,few_farmers,many_farmers,3,7,3,3
+"Decha, Modiyo Gombera",Bonga,25,20,Nache Areko,8,2,26.5,8,1,26.5,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Decha, Modiyo Gombera",Bonga,25,20,Adele Bocho,4,7,60.71428571,1,11,27.72727273,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Decha, Modiyo Gombera",Bonga,25,20,Nobo,5,4,8.4,4,8,30.71428571,few_plants,many_plants,few_farmers,medium_farmers,9,2,5,2
+"Decha, Modiyo Gombera",Bonga,25,20,Shiqqo,9,1,20,8,1,20,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Decha, Modiyo Gombera",Bonga,25,20,Utino,9,2,5,9,2,5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Decha, Modiyo Gombera",Bonga,25,20,Wuiro,9,2,5.5,9,1,5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Decha, Modiyo Gombera",Bonga,25,20,Chele Nobo,0,0,0,3,20,4,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Decha, Modiyo Gombera",Bonga,25,20,Chamero,0,0,0,9,3,3,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Decha, Modiyo Gombera",Bonga,25,20,Yaqqoo,8,2,16.5,7,3,18.33333333,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Telo, Baga",Bonga,23,NA,Achecho,7,1,30,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Telo, Baga",Bonga,23,NA,Bajjoo,7,3,26.66666667,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Telo, Baga",Bonga,23,NA,Chele Bocho,7,4,247.5,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Telo, Baga",Bonga,23,NA,Choro,8,1,20,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Telo, Baga",Bonga,23,NA,Adele Bocho,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Ageno,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Areko,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Chamero,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Ciito,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Ganji Bocho,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Geno,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Gushiroo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Maaca Dami,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Shallaako,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Waango,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Yabo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Telo, Baga",Bonga,23,NA,Nobo,8,3,16.66666667,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Telo, Baga",Bonga,23,NA,Shampo,7,1,30,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Telo, Baga",Bonga,23,NA,Utino,7,1,30,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Telo, Baga",Bonga,23,NA,Wuiro,9,1,30,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Telo, Baga",Bonga,23,NA,Yude Aafo,9,1,2,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Adele Bocho,7,2,40,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Areko,9,2,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Chele Bocho,1,13,82.30769231,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Ciiki Areko,8,1,30,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Ganji Bocho,7,2,65,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Bado,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Bajjoo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Gayoo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Kallo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Maaca Dami,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Shallaako,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Shubo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Wuiro,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Gudicho,1,10,51,NA,NA,NA,medium_plants,NA,medium_farmers,NA,5,NA,3,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Goosheno,4,6,86.66666667,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Nobo,2,15,29.13333333,NA,NA,NA,medium_plants,NA,medium_farmers,NA,5,NA,3,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Shuri,8,1,20,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Utiro,1,13,98.84615385,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Waango,5,4,22.25,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Yeebeno,9,2,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shishinda, Wana Bola",Bonga,24,NA,Yude Aafo,8,2,25,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shisho Inde, Agaro",Bonga,20,20,Aai Nobo,8,1,30,7,5,25.6,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Shisho Inde, Agaro",Bonga,20,20,Bajjoo,9,1,20,8,3,10.33333333,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Shisho Inde, Agaro",Bonga,20,20,Ganji Bocho,7,1,300,4,8,45,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Shisho Inde, Agaro",Bonga,20,20,Areko,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Chele Nobo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Ciiki Areko,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Gayoo,0,0,0,2,20,10,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Shisho Inde, Agaro",Bonga,20,20,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Maaca Dami,0,0,0,2,20,10,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Shisho Inde, Agaro",Bonga,20,20,Mocho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Nache Nobo,0,0,0,4,5,22.8,few_plants,medium_plants,no_farmers,medium_farmers,0,5,6,3
+"Shisho Inde, Agaro",Bonga,20,20,Taayo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Utiro,0,0,0,9,1,2,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Shisho Inde, Agaro",Bonga,20,20,Waango,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Wuiro,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Agaro",Bonga,20,20,Gudicho,8,1,50,7,1,50,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Shisho Inde, Agaro",Bonga,20,20,Goosheno,7,2,110,7,3,21.66666667,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Shisho Inde, Agaro",Bonga,20,20,Hicaawi,0,0,0,2,20,10,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Shisho Inde, Agaro",Bonga,20,20,Koche Tato,0,0,0,2,20,10,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Shisho Inde, Agaro",Bonga,20,20,Adele Bocho,7,3,123.3333333,7,4,62.5,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Shisho Inde, Town 01",Bonga,20,20,Aaki Baro,0,0,0,7,20,4.1,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Shisho Inde, Town 01",Bonga,20,20,Ageno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Areko,0,0,0,7,20,5.1,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Shisho Inde, Town 01",Bonga,20,20,Ciiki Areko,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Epo,0,0,0,7,20,2.75,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Shisho Inde, Town 01",Bonga,20,20,Ganji Bocho,8,1,15,2,7,75.71428571,few_plants,many_plants,few_farmers,medium_farmers,9,2,5,2
+"Shisho Inde, Town 01",Bonga,20,20,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Gudicho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Goosheno,8,1,15,9,3,2.666666667,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Shisho Inde, Town 01",Bonga,20,20,Kallo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Maaca Dami,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Nache Nobo,9,1,10,6,2,26,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Shisho Inde, Town 01",Bonga,20,20,Shallaako,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Shuri,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Taayo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Waango,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Wuiro,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Yeebeno,0,0,0,7,20,2.1,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Shisho Inde, Town 01",Bonga,20,20,Yude Aafo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Shisho Inde, Town 01",Bonga,20,20,Chele Bocho,1,7,71.42857143,1,15,154.6666667,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Shisho Inde, Town 01",Bonga,20,20,Adele Bocho,2,5,30.6,2,8,46.25,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Chena, Boba bella",Bonga,20,20,Achecho,4,4,57.5,3,3,43.33333333,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Chena, Boba bella",Bonga,20,20,Areko,7,3,40,5,6,10,many_plants,medium_plants,few_farmers,medium_farmers,3,5,3,3
+"Chena, Boba bella",Bonga,20,20,Bajjoo,2,9,25,4,16,13.0625,medium_plants,medium_plants,medium_farmers,many_farmers,5,4,3,2
+"Chena, Boba bella",Bonga,20,20,Chele Bocho,2,7,49.28571429,4,13,16.53846154,many_plants,medium_plants,medium_farmers,medium_farmers,2,5,2,3
+"Chena, Boba bella",Bonga,20,20,Choro,9,1,10,9,2,7.5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Chena, Boba bella",Bonga,20,20,Gayoo,7,2,29,6,2,15,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Boba bella",Bonga,20,20,Geno,9,1,10,6,2,25,few_plants,many_plants,few_farmers,few_farmers,9,3,5,3
+"Chena, Boba bella",Bonga,20,20,Gobi Nobo,5,4,24,8,9,9.333333333,medium_plants,few_plants,few_farmers,medium_farmers,6,8,4,4
+"Chena, Boba bella",Bonga,20,20,Goosheno,9,2,8,2,7,24.57142857,few_plants,many_plants,few_farmers,medium_farmers,9,2,5,2
+"Chena, Boba bella",Bonga,20,20,Gushiroo,8,1,20,3,2,17.5,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Boba bella",Bonga,20,20,Hicaawi,0,0,0,8,6,9.833333333,few_plants,few_plants,no_farmers,medium_farmers,0,8,6,4
+"Chena, Boba bella",Bonga,20,20,Maaca Dami,9,3,17.5,6,4,11.25,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Boba bella",Bonga,20,20,Mishiqo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Boba bella",Bonga,20,20,Nobo,1,9,173.3333333,1,14,21.78571429,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Chena, Boba bella",Bonga,20,20,Qeeqero,0,0,0,3,1,20,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Chena, Boba bella",Bonga,20,20,Qophiri,9,2,3.5,9,2,5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Chena, Boba bella",Bonga,20,20,Shallaako,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Boba bella",Bonga,20,20,Shimmo,8,3,24.33333333,9,4,8.25,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Chena, Boba bella",Bonga,20,20,Shuri,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Boba bella",Bonga,20,20,Taayo,0,0,0,6,4,16.25,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Chena, Boba bella",Bonga,20,20,Utiro,6,4,13.75,6,5,10.2,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Chena, Boba bella",Bonga,20,20,Waango,8,1,20,6,3,10,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Boba bella",Bonga,20,20,Yahi Bajjoo,0,0,0,4,20,15,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Chena, Boba bella",Bonga,20,20,Wuiro,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Bob Kocha",Bonga,20,22,Achecho,0,0,0,6,2,12.5,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Chena, Bob Kocha",Bonga,20,22,Ageno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Bob Kocha",Bonga,20,22,Bajjoo,6,5,12,3,5,26,medium_plants,many_plants,medium_farmers,few_farmers,5,3,3,3
+"Chena, Bob Kocha",Bonga,20,22,Bocho,9,1,4,0,0,0,few_plants,few_plants,few_farmers,no_farmers,9,0,5,6
+"Chena, Bob Kocha",Bonga,20,22,Chele Areko,7,1,50,6,1,20,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Bob Kocha",Bonga,20,22,Chele Bajjoo,0,0,0,6,3,13.3,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Chena, Bob Kocha",Bonga,20,22,Chele Bocho,5,4,9,2,7,28.57142857,few_plants,many_plants,few_farmers,medium_farmers,9,2,5,2
+"Chena, Bob Kocha",Bonga,20,22,Ciiki Areko,7,1,100,3,1,20,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Chena, Bob Kocha",Bonga,20,22,Choro,7,1,50,6,3,10,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Bob Kocha",Bonga,20,22,Gayoo,0,0,0,3,3,26.6,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Chena, Bob Kocha",Bonga,20,22,Geno,9,1,10,0,0,0,few_plants,few_plants,few_farmers,no_farmers,9,0,5,6
+"Chena, Bob Kocha",Bonga,20,22,Goosheno,8,1,20,9,1,5,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Bob Kocha",Bonga,20,22,Gushiroo,8,3,24.66666667,3,4,27.5,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Chena, Bob Kocha",Bonga,20,22,Adele Bocho,0,0,0,9,1,3,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Chena, Bob Kocha",Bonga,20,22,Nache Areko,9,1,1,3,6,24.66666667,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Chena, Bob Kocha",Bonga,20,22,Nobo,1,18,213.8888889,1,22,133.8636364,many_plants,many_plants,many_farmers,many_farmers,1,1,1,1
+"Chena, Bob Kocha",Bonga,20,22,Qeeqero,8,1,20,0,0,0,medium_plants,few_plants,few_farmers,no_farmers,6,0,4,6
+"Chena, Bob Kocha",Bonga,20,22,Qophiri,7,1,100,6,3,10.66666667,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Chena, Bob Kocha",Bonga,20,22,Taayo,4,4,77.5,6,3,15,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Chena, Bob Kocha",Bonga,20,22,Utiro,8,2,20,6,5,14,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Bob Kocha",Bonga,20,22,Yude Aafo,0,0,0,7,27,3.8,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Bob Kocha",Bonga,20,22,Chamero,0,0,0,7,27,4.7,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Bob Kocha",Bonga,20,22,Mocho,0,0,0,7,27,1.59,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Bob Kocha",Bonga,20,22,Shiqqo,0,0,0,7,27,3.4,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Bob Kocha",Bonga,20,22,Waango,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Gimbo, Ufi udo",Bonga,30,NA,Adele Bocho,5,4,42.5,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Ageno,9,1,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Areko,9,2,17.5,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Chele Bocho,4,4,86.25,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Kallo,8,1,30,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Waango,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Qeeqero,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Maaca Dami,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Ganji Bocho,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Choro,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Balado,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Wuiro,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Shubo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Bumbo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Yeebeno,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Goosheno,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Geno,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Nobo,7,2,75,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Utino,7,1,50,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Gimbo, Ufi udo",Bonga,30,NA,Yude Aafo,9,1,6,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Backbus",Mizan,20,NA,Bariz,9,1,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Backbus",Mizan,20,NA,Biyadi,9,2,27.5,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Bumbi,9,1,20,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Diizi,7,1,50,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shey Bench, Backbus",Mizan,20,NA,Fuuci,7,2,70,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shey Bench, Backbus",Mizan,20,NA,Gens,8,1,30,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Goncins,9,1,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Backbus",Mizan,20,NA,Kachu,9,1,20,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Kayi Bos,4,6,100,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Shey Bench, Backbus",Mizan,20,NA,Kuuqu,8,2,40,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Maaca Dami,8,2,32.5,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Maayi,9,2,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Backbus",Mizan,20,NA,Gina Qaayi,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Mazuba,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Chameri,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Yedi,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Gobiizi,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Mezuba,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Kozketsi,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Shapim,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Backbus",Mizan,20,NA,Nobo,1,20,NA,NA,NA,NA,NA,NA,many_farmers,NA,1,NA,1,NA
+"Shey Bench, Backbus",Mizan,20,NA,Tsidi Bos,7,3,46.66666667,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Backbus",Mizan,20,NA,Tosoyisi,9,1,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Backbus",Mizan,20,NA,Utoosi,4,6,56.66666667,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Shay Bench, Shapa",Mizan,20,NA,Bariz,1,20,NA,NA,NA,NA,NA,NA,many_farmers,NA,1,NA,1,NA
+"Shay Bench, Shapa",Mizan,20,NA,Dalanki,8,1,20,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shay Bench, Shapa",Mizan,20,NA,Dali Bos,4,3,400,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shay Bench, Shapa",Mizan,20,NA,Fuuci,5,5,17,NA,NA,NA,medium_plants,NA,medium_farmers,NA,5,NA,3,NA
+"Shay Bench, Shapa",Mizan,20,NA,Mazis,6,3,31,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shay Bench, Shapa",Mizan,20,NA,Nobo,1,20,NA,NA,NA,NA,NA,NA,many_farmers,NA,1,NA,1,NA
+"Shay Bench, Shapa",Mizan,20,NA,Kiyanz,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shay Bench, Shapa",Mizan,20,NA,Shapim,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shay Bench, Shapa",Mizan,20,NA,Tsidi Nobo,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shay Bench, Shapa",Mizan,20,NA,Gens,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shay Bench, Shapa",Mizan,20,NA,Gizhaw,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shay Bench, Shapa",Mizan,20,NA,Qeeqero,9,1,4,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shay Bench, Shapa",Mizan,20,NA,Umicho,9,1,2,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shay Bench, Shapa",Mizan,20,NA,Yedi,7,1,300,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shay Bench, Shapa",Mizan,20,NA,Zoqi Bos,4,3,366.6666667,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Chena, Koda",Bonga,20,27,Aai Areko,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Koda",Bonga,20,27,Aai Nobo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Koda",Bonga,20,27,Aaki Baro,0,0,0,8,2,50,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Chena, Koda",Bonga,20,27,Achecho,0,0,0,9,1,60,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Chena, Koda",Bonga,20,27,Bado,4,5,131,1,13,55.76923077,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Chena, Koda",Bonga,20,27,Bakkamo,9,1,10,9,2,12.5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Chena, Koda",Bonga,20,27,Chele Nobo,5,3,33.33333333,6,3,42.5,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Chena, Koda",Bonga,20,27,Chele Areko,6,4,35,5,7,27.42857143,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Chena, Koda",Bonga,20,27,Chele Bocho,1,20,NA,1,14,60,NA,many_plants,many_farmers,medium_farmers,1,2,1,2
+"Chena, Koda",Bonga,20,27,Choro,6,3,11.66666667,2,10,21,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Chena, Koda",Bonga,20,27,Geno,9,2,15,8,8,28.875,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Chena, Koda",Bonga,20,27,Goosheno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Koda",Bonga,20,27,Hicaawi,9,1,20,9,3,15,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Chena, Koda",Bonga,20,27,Maaca Dami,7,2,80,7,3,48.33333333,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Chena, Koda",Bonga,20,27,Nache Areko,5,4,42.5,1,16,31.875,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Chena, Koda",Bonga,20,27,Adele Bocho,1,20,NA,1,18,52.77777778,NA,many_plants,many_farmers,medium_farmers,1,2,1,2
+"Chena, Koda",Bonga,20,27,Nache Nobo,1,20,NA,1,27,78.88888889,NA,many_plants,many_farmers,many_farmers,1,1,1,1
+"Chena, Koda",Bonga,20,27,Oomacho,0,0,0,8,4,29.25,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Chena, Koda",Bonga,20,27,Qeeqero,7,1,100,5,6,33.33333333,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Chena, Koda",Bonga,20,27,Qophiri,9,2,17.5,5,6,26.16666667,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Chena, Koda",Bonga,20,27,Shaashe Waaji,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Chena, Koda",Bonga,20,27,Shimmo,0,0,0,8,2,40,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Chena, Koda",Bonga,20,27,Taayo,8,1,30,7,36,2,medium_plants,few_plants,few_farmers,many_farmers,6,7,4,3
+"Chena, Koda",Bonga,20,27,Tullii,5,3,66.66666667,2,7,27.85714286,many_plants,medium_plants,few_farmers,medium_farmers,3,5,3,3
+"Chena, Koda",Bonga,20,27,Bocho,0,0,0,7,36,2,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Koda",Bonga,20,27,Bumbo,0,0,0,7,36,2,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Koda",Bonga,20,27,Ageno,0,0,0,7,36,2,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Chena, Koda",Bonga,20,27,Utiro,8,1,30,5,10,30.7,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Semein Bench, Genja",Mizan,20,19,Areko,9,3,25,7,3,40,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Semein Bench, Genja",Mizan,20,19,Biadu,9,1,3,8,1,15,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Semein Bench, Genja",Mizan,20,19,Chil Bos,8,6,31.66666667,4,6,18.83333333,medium_plants,medium_plants,medium_farmers,medium_farmers,5,5,3,3
+"Semein Bench, Genja",Mizan,20,19,Chorsin,5,4,43.75,7,5,5.4,many_plants,few_plants,few_farmers,medium_farmers,3,8,3,4
+"Semein Bench, Genja",Mizan,20,19,Dali Bos,9,1,20,7,5,18,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Semein Bench, Genja",Mizan,20,19,Dalanki,2,7,59.28571429,1,10,39.5,many_plants,many_plants,medium_farmers,medium_farmers,2,2,2,2
+"Semein Bench, Genja",Mizan,20,19,Fuuci,8,3,18.33333333,5,9,9.777777778,few_plants,few_plants,few_farmers,medium_farmers,9,8,5,4
+"Semein Bench, Genja",Mizan,20,19,Hicaawi,7,1,35,8,1,10,many_plants,few_plants,few_farmers,few_farmers,3,9,3,5
+"Semein Bench, Genja",Mizan,20,19,Kizhi,9,3,3.333333333,3,19,26.85,few_plants,medium_plants,few_farmers,many_farmers,9,4,5,2
+"Semein Bench, Genja",Mizan,20,19,Nobo,1,20,NA,1,14,182.1428571,NA,many_plants,many_farmers,medium_farmers,1,2,1,2
+"Semein Bench, Genja",Mizan,20,19,Qophiri,9,1,20,7,1,30,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Semein Bench, Genja",Mizan,20,19,Shimmo,9,1,20,7,1,20,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Semein Bench, Genja",Mizan,20,19,Messo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Semein Bench, Genja",Mizan,20,19,Gayoo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Semein Bench, Genja",Mizan,20,19,Badi,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Semein Bench, Genja",Mizan,20,19,Gens,0,0,0,4,6,44.16666667,few_plants,many_plants,no_farmers,medium_farmers,0,2,6,2
+"Semein Bench, Genja",Mizan,20,19,Maayi,0,0,0,8,1,10,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Semein Bench, Genja",Mizan,20,19,Taaya,0,0,0,1,13,19.08333333,few_plants,medium_plants,no_farmers,medium_farmers,0,5,6,3
+"Semein Bench, Genja",Mizan,20,19,Waango,7,1,100,7,1,100,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Semein Bench, Genja",Mizan,20,19,Yedi,9,1,10,9,1,5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Semein Bench, Genja",Mizan,20,19,Zoqi Bos,1,8,NA,2,10,11.4,NA,medium_plants,medium_farmers,medium_farmers,1,5,1,3
+"Semein Bench, Genja",Mizan,20,19,Kuuqu,0,0,0,2,19,12.1,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Semein Bench, Genja",Mizan,20,19,Qeeqero,0,0,0,2,19,10.05,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Semein Bench, Genja",Mizan,20,19,Uda Koch,0,0,0,2,19,9.65,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Semein Bench, Muya Kela",Mizan,21,23,Aaki Baro,7,2,60,2,8,55,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Semein Bench, Muya Kela",Mizan,21,23,Bajjoo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Semein Bench, Muya Kela",Mizan,21,23,Biyadi,0,0,0,1,37,36.02,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Semein Bench, Muya Kela",Mizan,21,23,Chele Bocho,1,16,NA,2,17,40.58823529,NA,medium_plants,many_farmers,medium_farmers,1,5,1,3
+"Semein Bench, Muya Kela",Mizan,21,23,Choro,8,3,21,3,5,34,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Semein Bench, Muya Kela",Mizan,21,23,Ciiki Areko,7,3,NA,3,6,29.16666667,NA,few_plants,few_farmers,medium_farmers,7,8,3,4
+"Semein Bench, Muya Kela",Mizan,21,23,Gayoo,9,2,5.5,3,2,50,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Semein Bench, Muya Kela",Mizan,21,23,Geno,8,2,35,3,6,30.16666667,medium_plants,few_plants,few_farmers,medium_farmers,6,8,4,4
+"Semein Bench, Muya Kela",Mizan,21,23,Gobiizi,0,0,0,1,37,21.62,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Semein Bench, Muya Kela",Mizan,21,23,Koremo,9,1,10,3,1,50,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Semein Bench, Muya Kela",Mizan,21,23,Maaca Dami,9,1,3,3,3,45,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Semein Bench, Muya Kela",Mizan,21,23,Messo,7,2,75,3,3,36.66666667,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Semein Bench, Muya Kela",Mizan,21,23,Nache Bado,1,9,58.88888889,2,12,46.66666667,many_plants,medium_plants,medium_farmers,medium_farmers,2,5,2,3
+"Semein Bench, Muya Kela",Mizan,21,23,Nache Areko,8,1,30,2,9,59.44444444,medium_plants,many_plants,few_farmers,medium_farmers,6,2,4,2
+"Semein Bench, Muya Kela",Mizan,21,23,Nobo,1,21,NA,1,23,173.4782609,NA,many_plants,many_farmers,many_farmers,1,1,1,1
+"Semein Bench, Muya Kela",Mizan,21,23,Oomo,8,4,25,3,3,60,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Semein Bench, Muya Kela",Mizan,21,23,Shapo,8,1,30,3,4,25,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Semein Bench, Muya Kela",Mizan,21,23,Shimmo,8,1,30,3,2,50,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Semein Bench, Muya Kela",Mizan,21,23,Sutas,0,0,0,1,37,18.24,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Semein Bench, Muya Kela",Mizan,21,23,Taayo,4,5,50,2,11,53.63636364,medium_plants,many_plants,few_farmers,medium_farmers,6,2,4,2
+"Semein Bench, Muya Kela",Mizan,21,23,Tsiyakun,0,0,0,1,37,58.78,few_plants,many_plants,no_farmers,many_farmers,0,1,6,1
+"Semein Bench, Muya Kela",Mizan,21,23,Utiro,0,0,0,3,5,32,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Semein Bench, Muya Kela",Mizan,21,23,Waango,9,1,20,3,2,40,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Semein Bench, Muya Kela",Mizan,21,23,Yaahe Bado,7,2,100,3,5,44,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Semein Bench, Kasha",Mizan,20,16,Biadu,9,1,5,7,16,5.9,few_plants,few_plants,few_farmers,many_farmers,9,7,5,3
+"Semein Bench, Kasha",Mizan,20,16,Dali Bos,9,1,10,6,3,13.33333333,medium_plants,many_plants,few_farmers,few_farmers,6,3,4,3
+"Semein Bench, Kasha",Mizan,20,16,Dalanki,1,20,NA,5,8,16.875,NA,many_plants,many_farmers,medium_farmers,1,2,1,2
+"Semein Bench, Kasha",Mizan,20,16,Dash Tsidu,0,0,0,6,4,11.5,few_plants,medium_plants,no_farmers,medium_farmers,0,5,6,3
+"Semein Bench, Kasha",Mizan,20,16,Fuuci,9,2,6,6,2,12.5,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Semein Bench, Kasha",Mizan,20,16,Gizhuba,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Semein Bench, Kasha",Mizan,20,16,Goosheno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Semein Bench, Kasha",Mizan,20,16,Kizhi,0,0,0,9,1,10,few_plants,medium_plants,no_farmers,few_farmers,0,6,6,4
+"Semein Bench, Kasha",Mizan,20,16,Kuuqu,9,2,6,9,3,6.6,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Semein Bench, Kasha",Mizan,20,16,Maayi,7,1,50,9,1,5,many_plants,few_plants,few_farmers,few_farmers,3,9,3,5
+"Semein Bench, Kasha",Mizan,20,16,Nobo,1,20,NA,1,15,105.3333333,NA,many_plants,many_farmers,many_farmers,1,1,1,1
+"Semein Bench, Kasha",Mizan,20,16,Shimmo,7,1,50,6,1,15,many_plants,many_plants,few_farmers,few_farmers,3,3,3,3
+"Semein Bench, Kasha",Mizan,20,16,Sutas,9,1,2,6,4,11,few_plants,medium_plants,few_farmers,medium_farmers,9,5,5,3
+"Semein Bench, Kasha",Mizan,20,16,Taaya,9,1,5,7,16,2.8,few_plants,few_plants,few_farmers,many_farmers,9,7,5,3
+"Semein Bench, Kasha",Mizan,20,16,Tsiyakun,9,2,16,6,1,12,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Semein Bench, Kasha",Mizan,20,16,Tsorsin,9,1,7.5,6,4,11.25,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Semein Bench, Kasha",Mizan,20,16,Uda Koch,9,2,3.5,0,0,0,few_plants,few_plants,few_farmers,no_farmers,9,0,5,6
+"Semein Bench, Kasha",Mizan,20,16,Mazuba,0,0,0,7,16,6,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Semein Bench, Kasha",Mizan,20,16,Kozketsi,0,0,0,7,16,9.3,few_plants,medium_plants,no_farmers,many_farmers,0,4,6,2
+"Semein Bench, Kasha",Mizan,20,16,Yaqi,8,2,30,2,8,17,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Semein Bench, Kasha",Mizan,20,16,Zoqi Bos,9,2,6,5,10,9.4,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Decha, Shapa",Bonga,21,12,Achecho,0,0,0,3,2,100,few_plants,many_plants,no_farmers,few_farmers,0,3,6,3
+"Decha, Shapa",Bonga,21,12,Aaki Baro,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Ageno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Barisolo,0,0,0,2,12,11,few_plants,few_plants,no_farmers,many_farmers,0,7,6,3
+"Decha, Shapa",Bonga,21,12,Boongo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Boqele Bocho,7,1,500,3,2,45,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Decha, Shapa",Bonga,21,12,Bumbo,6,3,8.666666667,3,2,27.5,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Shapa",Bonga,21,12,Chele Areko,8,2,110,3,2,27.5,many_plants,medium_plants,few_farmers,few_farmers,3,6,3,4
+"Decha, Shapa",Bonga,21,12,Chele Bocho,7,5,160,3,5,64,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Decha, Shapa",Bonga,21,12,Chongo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Choro,8,2,27.5,9,3,4.3,medium_plants,few_plants,few_farmers,medium_farmers,6,8,4,4
+"Decha, Shapa",Bonga,21,12,Dabiyo,7,1,50,3,1,30,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Shapa",Bonga,21,12,Epecho,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Ganji Bocho,7,1,100,3,3,133.3,medium_plants,many_plants,few_farmers,medium_farmers,6,2,4,2
+"Decha, Shapa",Bonga,21,12,Geno,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Gushiroo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Koremo,7,1,35,3,1,50,medium_plants,medium_plants,few_farmers,few_farmers,6,6,4,4
+"Decha, Shapa",Bonga,21,12,Maaca Dami,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Nache Areko,9,2,17.5,9,2,7.5,few_plants,few_plants,few_farmers,few_farmers,9,9,5,5
+"Decha, Shapa",Bonga,21,12,Adele Bocho,4,5,117,3,4,85.25,many_plants,many_plants,few_farmers,medium_farmers,3,2,3,2
+"Decha, Shapa",Bonga,21,12,Nobo,2,6,67.5,4,7,15.71428571,medium_plants,medium_plants,medium_farmers,medium_farmers,5,5,3,3
+"Decha, Shapa",Bonga,21,12,Qattaano,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Qeeqero,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Qupho,9,1,20,9,1,12,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Shapa",Bonga,21,12,Shallaako,9,1,10,3,2,45,few_plants,medium_plants,few_farmers,few_farmers,9,6,5,4
+"Decha, Shapa",Bonga,21,12,Shimmo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Shuri,0,0,0,9,1,5,few_plants,few_plants,no_farmers,few_farmers,0,9,6,5
+"Decha, Shapa",Bonga,21,12,Taayo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Tarallo,0,0,0,0,0,0,few_plants,few_plants,no_farmers,no_farmers,0,0,6,6
+"Decha, Shapa",Bonga,21,12,Tuutto,8,2,77.5,9,1,4,medium_plants,few_plants,few_farmers,few_farmers,6,9,4,5
+"Decha, Shapa",Bonga,21,12,Utiro,7,1,100,3,3,20,medium_plants,medium_plants,few_farmers,medium_farmers,6,5,4,3
+"Decha, Shapa",Bonga,21,12,Waango,4,4,160,3,3,46.66666667,many_plants,medium_plants,few_farmers,medium_farmers,3,5,3,3
+"Decha, Shapa",Bonga,21,12,Wuiro,9,2,7.5,3,4,85,few_plants,many_plants,few_farmers,medium_farmers,9,2,5,2
+"Shey Bench, Kula gacha",Mizan,20,NA,Biyadi,9,1,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Dali Bos,1,9,NA,NA,NA,NA,NA,NA,medium_farmers,NA,1,NA,1,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Diizi,7,1,40,NA,NA,NA,medium_plants,NA,few_farmers,NA,6,NA,4,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Dis Bosi,7,2,60,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Fuuci,7,2,50,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Ageno,9,1,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Gobiizi,9,2,10,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Kozketsi,9,1,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Kuuqu,7,1,50,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Maaca Dami,9,1,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Mazuba,9,3,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Nobo,2,7,29.28571429,NA,NA,NA,medium_plants,NA,medium_farmers,NA,5,NA,3,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Kayi Bos,4,4,50,NA,NA,NA,many_plants,NA,few_farmers,NA,3,NA,3,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Utoosi,4,5,84,NA,NA,NA,many_plants,NA,medium_farmers,NA,2,NA,2,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Yedi,9,1,15,NA,NA,NA,few_plants,NA,few_farmers,NA,9,NA,5,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Shapim,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Bariz,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Kachu,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Mezuba,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
+"Shey Bench, Kula gacha",Mizan,20,NA,Goncins,0,0,0,NA,NA,NA,few_plants,NA,no_farmers,NA,0,NA,6,NA
