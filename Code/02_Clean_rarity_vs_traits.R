@@ -7,7 +7,7 @@
 #   - landrace_avg_status_landscape.csv   (landscape rarity status per
 #                                           landrace; output of the
 #                                           clean_rarity_status.R script)
-#   - use_data_final.csv                  (trait/use scores per landrace)
+#   - Use_data_final.csv                  (trait/use scores per landrace)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -50,7 +50,7 @@ suppressPackageStartupMessages({
 status <- read_csv("landrace_avg_status_landscape.csv") %>%
   clean_names()
 
-traits <- read_csv("use_data_final.csv") %>%
+traits <- read_csv("Use_data_final.csv") %>%
   clean_names()
 
 # Inspect names if needed
