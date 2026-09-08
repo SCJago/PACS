@@ -603,6 +603,25 @@ write_csv(bid_summary, file.path(out_dir, "bid_price_range_summary.csv"))
 # ----------------------------
 # 11. Prepare model variables
 # ----------------------------
+# Consistency check: how many offers have missing size data (from
+# Landrace_size_data_clean.csv) that will be mean-imputed below?
+
+missing_size_offers <- offers_model %>%
+  filter(is.na(pseudostem_volume_growth_mean) | is.na(maturity_age_mean))
+
+missing_size_landraces <- missing_size_offers %>% distinct(Landrace)
+
+if (nrow(missing_size_offers) > 0) {
+  warning(
+    nrow(missing_size_offers), " offer(s), covering ",
+    nrow(missing_size_landraces), " distinct landrace(s), have missing ",
+    "pseudostem_volume_growth_mean and/or maturity_age_mean - see ",
+    "missing_size_landraces. These will be mean-imputed below."
+  )
+  print(missing_size_landraces)
+} else {
+  cat("No missing pseudostem_volume_growth_mean or maturity_age_mean values.\n")
+}
 # Keep unscaled versions of log_individuals and pseudostem growth so
 # effect-plot axes can be shown in original units.
 offers_model <- offers_model %>%
