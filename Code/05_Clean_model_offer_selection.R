@@ -8,7 +8,8 @@
 #                                             offers)
 #   - gender_balance.csv                    (community, farmers, women)
 #   - landrace_name_id_crosswalk.csv        (Landrace_name <-> Landrace_id_tender)
-#   - landrace_avg_status_landscape.csv     (Landrace_name, landscape_category)
+#   - landrace_avg_status_landscape.csv     (Landrace_name, landscape_category,
+#                                            produced by 01_clean_rarity_status.R)
 #   - community_name_crosswalk.csv          (Community <-> Community_name)
 #
 # WHAT THIS SCRIPT DOES
@@ -25,7 +26,10 @@
 # OUTPUTS GENERATED
 # ----------------------
 #   select_offers.csv   final selected offers: community, landrace,
-#       plants, cost (Birr/GBP), and number of farmers.
+#       plants, cost (Birr/GBP), and number of farmers.    
+#       (used in 06_clean_landrace_rarity_effect_analysis.R,
+#       07_clean_crowding_in_out_analysis.R, 08_clean_bid_heterogeneity.R,
+#       09_clean_scaling_up_costs.R)
 #
 # ============================================================
 
