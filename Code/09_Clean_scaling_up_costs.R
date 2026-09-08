@@ -5,8 +5,11 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - T1_T2_rarity_assessment_data.csv 
-#   - select_offers.csv             
+#   - T1_T2_rarity_assessment_data.csv     (community x landrace survey data
+#                                           T1 baseline + T2 follow up)
+#
+#   - select_offers.csv                    (final selected offers, produced by
+#                                           05_clean_model_offer_selection.R)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
