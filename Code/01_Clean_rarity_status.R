@@ -9,7 +9,7 @@
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
-# Community-level rarity scores (already assigned per landrace per
+# Community-level rarity scores (assigned per landrace per
 # community, based on proportion of households cultivating it and its
 # abundance within households - Fig 2A) are aggregated across the study
 # landscape into an overall conservation status per landrace, from
@@ -22,18 +22,17 @@
 #
 # OUTPUTS GENERATED
 # ----------------------
-#   T1_fullgrid_with_absences.csv        full community x landrace grid
-#       with absences coded (see section 3).
+#   T1_fullgrid_with_absences.csv 
 #
 #   landrace_avg_status_landscape.csv    one row per landrace: mean
-#       landscape rarity score, presence stats, and landscape_category.
+#       landscape rarity score and landscape_category.
 #
 #   FIG 2C MAIN FIGURE PLOTS: landrace_rarity_bar.png (2Ci) and
 #       p_comm_vs_plantsperhouse_scatt.png (2Cii), plus a combined
 #       side-by-side panel (landscape_rarity_T1_panel.png).
 #
 #   SUPPLEMENT PLOTS: households/plants per household by rarity
-#       category, as boxplots (box_*_by_landscape_rarity_T1.png).
+#       category, as boxplots.
 #
 #   HEADLINE STATS CSVs: landscape_profile_T1.csv (n landraces per
 #       category), threatened_share_T1.csv (share threatened/lost),
