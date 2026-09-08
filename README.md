@@ -52,18 +52,18 @@ install.packages(c(
 Original input files (in `PACS/Data`) — not files produced by another script
 in this pipeline:
 
-| File | Description |
-|---|---|
-| `T1_T2_rarity_assessment_data.csv` | Community x landrace survey data, T1 baseline + T2 follow-up |
-| `Use_data_final.csv` | Trait/use scores per landrace |
-| `clean_control_hh_data.csv` | Control household data: T1/T2 landrace lists, coordinates, years |
-| `clean_offers.csv` | Cleaned tender offers |
-| `gender_balance.csv` | Community, farmers, women |
-| `landrace_name_id_crosswalk.csv` | Landrace_name <-> Landrace_id_tender |
-| `community_name_crosswalk.csv` | Community <-> Community_name |
-| `Landrace_size_data_clean.csv` | Landrace-level plant measurements: age, maturity age, pseudostem height and circumference |
-| `enset_per_farmer_by_community.csv` | Mean enset plants per farmer by community. Produced by `community_enset_per_farmer.R` — not part of this numbered set |
-| `spatial_data.zip` | See below |
+| File | Description | Used in |
+|---|---|---|
+| `T1_T2_rarity_assessment_data.csv` | Community x landrace survey data, T1 baseline + T2 follow-up | 01, 04, 06, 09 |
+| `Use_data_final.csv` | Trait/use scores per landrace | 02, 08 |
+| `clean_control_hh_data.csv` | Control household data: T1/T2 landrace lists, coordinates, years | 03 |
+| `clean_offers.csv` | Cleaned tender offers | 05, 08 |
+| `gender_balance.csv` | Community, farmers, women | 05, 08 |
+| `landrace_name_id_crosswalk.csv` | Landrace_name <-> Landrace_id_tender | 05, 08 |
+| `community_name_crosswalk.csv` | Community <-> Community_name | 05, 08 |
+| `Landrace_size_data_clean.csv` | Landrace-level plant measurements: age, maturity age, pseudostem height and circumference | 08 |
+| `enset_per_farmer_by_community.csv` | Mean enset plants per farmer by community. Produced by `community_enset_per_farmer.R` — not part of this numbered set | 08 |
+| `spatial_data.zip` | See below | 03 |
 
 **`spatial_data.zip`** must be unzipped into `PACS/Data` before running
 script `03`. Contains `surveyed_kebeles_PACS.shp` (+ its `.shx`/`.dbf`/`.prj`
@@ -82,3 +82,6 @@ sidecar files), `Rift_valley_boundary.kml`, and `agroecological_zones.tif`.
 | `07_clean_crowding_in_out_analysis.R` | Tests whether programme coverage produced spillover (crowding-in) effects on non-contracted landraces | — | — |
 | `08_clean_bid_heterogeneity.R` | Analyses bid heterogeneity to identify drivers of farmers' compensation demands | — | — |
 | `09_clean_scaling_up_costs.R` | Projects the national cost of scaling PACS-style incentives to conserve enset genetic resources range-wide | — | — |
+
+Each script's own header comment (`OUTPUTS GENERATED`) lists every file it
+produces, including ones not reused elsewhere in the pipeline.
