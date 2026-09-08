@@ -6,7 +6,7 @@
 # ----------------------
 #   - landrace_avg_status_landscape.csv   (landscape rarity status per
 #                                           landrace; output of the
-#                                           clean_rarity_status.R script)
+#                                           01_clean_rarity_status.R script)
 #   - Use_data_final.csv                  (trait/use scores per landrace)
 #
 # WHAT THIS SCRIPT DOES
