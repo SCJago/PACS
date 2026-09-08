@@ -216,11 +216,41 @@ write_csv(landrace_panel, "landrace_effect_analysis_df_long.csv")
 # 12. Restrict to primary sample: rare landraces at baseline
 # ----------------------------
 # Restricted, Endangered or Critical at baseline - treated and control
-# landraces are drawn from the same conservation-risk pool.
+# landraces are drawn from the same conservation-risk pool. Epo and
+# Waango are kept in regardless of their baseline category, since both
+# were actually selected/contracted under PACS despite not falling in
+# the eligible risk categories - excluding them would drop two
+# genuinely treated landraces from the primary sample.
 eligible_categories <- c("Critical", "Endangered", "Restricted")
+selected_outside_eligible <- c("Epo", "Waango")
+
+# Consistency check: confirm these two are actually present in
+# landrace_panel under these exact names before relying on the filter
+# below to keep them - a spelling/capitalisation mismatch here would
+# silently exclude them again despite this fix.
+missing_selected_landraces <- setdiff(
+  selected_outside_eligible,
+  unique(landrace_panel$Landrace_name)
+)
+
+if (length(missing_selected_landraces) > 0) {
+  warning(
+    "The following landrace(s), expected to be kept in the primary ",
+    "sample despite not being in the eligible rarity categories, were ",
+    "not found in landrace_panel$Landrace_name: ",
+    paste(missing_selected_landraces, collapse = ", "),
+    ". Check spelling/capitalisation - they will NOT be retained by ",
+    "the filter below."
+  )
+} else {
+  cat("Epo and Waango both found in landrace_panel - will be retained.\n")
+}
 
 landrace_panel_rare <- landrace_panel %>%
-  filter(landscape_category %in% eligible_categories) %>%
+  filter(
+    landscape_category %in% eligible_categories |
+      Landrace_name %in% selected_outside_eligible
+  ) %>%
   droplevels()
 
 # Sample size check
@@ -231,6 +261,8 @@ sample_check <- landrace_panel_rare %>%
     n_communities = n_distinct(Community_name)
   )
 print(sample_check)
+
+
 
 
 
