@@ -44,7 +44,7 @@
 #   models_pacs_main.html       regression table (rarity, households,
 #       plants models).
 #
-#   spillover_model_coefficients_all.csv  tidied coefficients for all three
+#   model_coefficients_all.csv  tidied coefficients for all three
 #       models.
 #
 #   Figure2_line_plots.png      baseline-referenced DiD prediction plot
