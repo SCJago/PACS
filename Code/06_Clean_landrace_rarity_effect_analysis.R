@@ -5,9 +5,12 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - T1_T2_rarity_assessment_data.csv   
-#   - select_offers.csv             
-#   - landrace_avg_status_landscape.csv  
+#   - T1_T2_rarity_assessment_data.csv   (community x landrace survey data,
+#                                         T1 baseline + T2 follow-up)
+#   - select_offers.csv                  (final selected offers produced by 
+#                                         05_clean_model_offer_selection.R)
+#   - landrace_avg_status_landscape.csv  (landscape rarity category, produced
+#                                         by 01_clean_rarity_status.R)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -33,8 +36,7 @@
 #   landrace_effect_analysis_df_long.csv   long-format community-landrace
 #       panel (all landraces, all conservation-risk categories), with
 #       clean column names and types, and landscape_category attached.
-#       Input file for the crowding-in/crowding-out spillover analysis
-#       script.
+#       (Used in 07_clean_crowding_in_out_analysis.R)
 #
 #   descriptives_rare.csv       descriptive stats for the primary
 #       (rare-landrace) sample, by timepoint x contract status.
@@ -42,7 +44,7 @@
 #   models_pacs_main.html       regression table (rarity, households,
 #       plants models).
 #
-#   model_coefficients_all.csv  tidied coefficients for all three
+#   spillover_model_coefficients_all.csv  tidied coefficients for all three
 #       models.
 #
 #   Figure2_line_plots.png      baseline-referenced DiD prediction plot
