@@ -510,4 +510,4 @@ coefs_gbp <- map_dfr(models_spill_gbp, broom::tidy, .id = "model") %>%
 
 coefs_all <- bind_rows(coefs_share, coefs_count, coefs_gbp)
 
-write_csv(coefs_all, "model_coefficients_all.csv")
+write_csv(coefs_all, "spillover_model_coefficients_all.csv")
