@@ -4,8 +4,8 @@
 #
 # FILES NEEDED 
 #  (not provided for confidentiality - control hh data without coordinates 
-#  provided as "clean_control_hh_data_sharenolatlon.csv" - required
-#  output for next script "hh_boot_35-37E.rds" is provided as this does not
+#  provided as "clean_control_hh_data_sharenolatlon.csv") 
+#  (Required output for next script "hh_boot_35-37E.rds" is provided as this does not
 #  contain identifying information)
 #
 # ----------------------
