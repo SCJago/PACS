@@ -5,12 +5,9 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - T1_T2_rarity_assessment_data.csv   (community x landrace survey data,
-#                                         T1 baseline + T2 follow-up)
-#   - select_offers.csv                  (final selected offers produced by 
-#                                         05_clean_model_offer_selection.R)
-#   - landrace_avg_status_landscape.csv  (landscape rarity category, produced
-#                                         by 01_clean_rarity_status.R)
+#   - T1_T2_rarity_assessment_data_share.csv   
+#   - select_offers.csv                        (produced in script 05)
+#   - landrace_avg_status_landscape.csv        (produced in script 01)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -36,7 +33,8 @@
 #   landrace_effect_analysis_df_long.csv   long-format community-landrace
 #       panel (all landraces, all conservation-risk categories), with
 #       clean column names and types, and landscape_category attached.
-#       (Used in 07_clean_crowding_in_out_analysis.R)
+#       Input file for the crowding-in/crowding-out spillover analysis
+#       script.
 #
 #   descriptives_rare.csv       descriptive stats for the primary
 #       (rare-landrace) sample, by timepoint x contract status.
@@ -79,7 +77,7 @@ suppressPackageStartupMessages({
 # ----------------------------
 # 2. Load inputs
 # ----------------------------
-before_after_data <- read.csv("T1_T2_rarity_assessment_data.csv")
+before_after_data <- read.csv("T1_T2_rarity_assessment_data_share.csv")
 selected_bids     <- read.csv("select_offers.csv")
 
 
@@ -95,7 +93,7 @@ before_after_data <- before_after_data %>%
   ) %>%
   filter(!is.na(T2_participants), T2_participants != "NA")
 
-print(before_after_data %>% distinct(Community_name) %>% nrow())
+print(before_after_data %>% distinct(Community) %>% nrow())
 
 
 # ----------------------------
@@ -103,13 +101,13 @@ print(before_after_data %>% distinct(Community_name) %>% nrow())
 # ----------------------------
 selected_bids_keys <- selected_bids %>%
   mutate(
-    Community_name = str_trim(Community_name),
-    Landrace_name  = str_trim(Landrace_name)
+    Community = str_trim(Community),
+    Landrace = str_trim(Landrace_ID)
   ) %>%
-  distinct(Community_name, Landrace_name)
+  distinct(Community, Landrace_ID)
 
 selected_key_vec <- selected_bids_keys %>%
-  mutate(key = str_c(Community_name, "||", Landrace_name)) %>%
+  mutate(key = str_c(Community, "||", Landrace_ID)) %>%
   pull(key)
 
 
@@ -118,9 +116,9 @@ selected_key_vec <- selected_bids_keys %>%
 # ----------------------------
 before_after_data <- before_after_data %>%
   mutate(
-    Community_name = as.character(Community_name) %>% str_trim() %>% str_squish(),
-    Landrace_name  = as.character(Landrace_name)  %>% str_trim() %>% str_squish(),
-    key = str_c(Community_name, "||", Landrace_name),
+    Community = as.character(Community) %>% str_trim() %>% str_squish(),
+    Landrace_ID  = as.character(Landrace_ID)  %>% str_trim() %>% str_squish(),
+    key = str_c(Community, "||", Landrace_ID),
     paid = if_else(key %in% selected_key_vec, "Yes", "No")
   ) %>%
   select(-key)
@@ -141,7 +139,7 @@ before_after_long <- before_after_data %>%
     names_pattern = "^(T[12])_(.*)$"
   ) %>%
   mutate(
-    Timepoint = recode(Timepoint, "T1" = "before", "T2" = "after"),
+    Timepoint = dplyr::recode(Timepoint, "T1" = "before", "T2" = "after"),
     Timepoint = factor(Timepoint, levels = c("before", "after"))
   )
 
@@ -164,8 +162,8 @@ landrace_panel_raw <- before_after_long %>%
     Timepoint = if_else(Timepoint == "after", 1L, 0L)
   ) %>%
   select(
-    Community_name,
-    Landrace_name,
+    Community,
+    Landrace_ID,
     paid,
     Timepoint,
     present,
@@ -180,8 +178,8 @@ landrace_panel_raw <- before_after_long %>%
 # ----------------------------
 landrace_panel <- landrace_panel_raw %>%
   mutate(
-    Community_name  = as.factor(Community_name),
-    Landrace_name   = as.factor(Landrace_name),
+    Community  = as.factor(Community),
+    Landrace_ID   = as.factor(Landrace_ID),
     paid            = as.integer(paid),
     Timepoint       = as.integer(Timepoint),
     present         = as.numeric(present),
@@ -190,20 +188,47 @@ landrace_panel <- landrace_panel_raw %>%
     rarity_status   = as.numeric(rarity_status)
   )
 
+# ----------------------------
+# 9A. extract raw numbers for fig 2A and reporting raw averages
+# ----------------------------
+
+# Median and interquartile range, formatted as "median (Q1–Q3)"
+med_iqr <- function(x) {
+  q <- quantile(x, c(0.25, 0.5, 0.75), na.rm = TRUE)
+  sprintf("%.0f (%.0f–%.0f)", q[2], q[1], q[3])
+}
+
+# Typical households and plants per household for each rarity score
+by_score <- split(landrace_panel, landrace_panel$rarity_status)
+score_table <- data.frame(
+  rarity_status   = names(by_score),
+  n_obs           = sapply(by_score, nrow),
+  households      = sapply(by_score, function(d) med_iqr(d$no_households)),
+  plants_per_hh   = sapply(by_score, function(d) med_iqr(d$avr_plants))
+)
+print(score_table, row.names = FALSE)
+write.csv(score_table, "raw_score_median_table.csv")
+
+# Mean rarity score by contract status (paid) and timepoint (0 = baseline, 1 = endline)
+rarity_means <- aggregate(rarity_status ~ paid + Timepoint, data = landrace_panel,
+                          FUN = function(x) round(mean(x), 2), na.action = na.omit)
+print(rarity_means)
+write.csv(rarity_means, "raw_rarity_means_t1t2.csv")
+
 
 # ----------------------------
 # 10. Join landscape rarity classification
 # ----------------------------
 rarity_lookup <- read_csv("landrace_avg_status_landscape.csv", show_col_types = FALSE) %>%
-  select(Landrace_name, landscape_category) %>%   # keep only needed column
+  select(Landrace_ID, landscape_category) %>%   # keep only needed column
   distinct() %>%                                  # ensure one row per landrace
   mutate(
-    Landrace_name = as.factor(Landrace_name),
+    Landrace_ID = as.factor(Landrace_ID),
     landscape_category = as.factor(landscape_category)
   )
 
 landrace_panel <- landrace_panel %>%
-  left_join(rarity_lookup, by = "Landrace_name")
+  left_join(rarity_lookup, by = "Landrace_ID")
 
 
 # ----------------------------
@@ -217,39 +242,16 @@ write_csv(landrace_panel, "landrace_effect_analysis_df_long.csv")
 # ----------------------------
 # Restricted, Endangered or Critical at baseline - treated and control
 # landraces are drawn from the same conservation-risk pool. Epo and
-# Waango are kept in regardless of their baseline category, since both
-# were actually selected/contracted under PACS despite not falling in
-# the eligible risk categories - excluding them would drop two
-# genuinely treated landraces from the primary sample.
+# Waango are kept in regardless of their baseline category, as these are Lost 
+# and Common respectively and were additional options given to farmers to select. 
 eligible_categories <- c("Critical", "Endangered", "Restricted")
-selected_outside_eligible <- c("Epo", "Waango")
+selected_outside_eligible <- c("LR0111", "LR0101")
 
-# Consistency check: confirm these two are actually present in
-# landrace_panel under these exact names before relying on the filter
-# below to keep them - a spelling/capitalisation mismatch here would
-# silently exclude them again despite this fix.
-missing_selected_landraces <- setdiff(
-  selected_outside_eligible,
-  unique(landrace_panel$Landrace_name)
-)
-
-if (length(missing_selected_landraces) > 0) {
-  warning(
-    "The following landrace(s), expected to be kept in the primary ",
-    "sample despite not being in the eligible rarity categories, were ",
-    "not found in landrace_panel$Landrace_name: ",
-    paste(missing_selected_landraces, collapse = ", "),
-    ". Check spelling/capitalisation - they will NOT be retained by ",
-    "the filter below."
-  )
-} else {
-  cat("Epo and Waango both found in landrace_panel - will be retained.\n")
-}
 
 landrace_panel_rare <- landrace_panel %>%
   filter(
     landscape_category %in% eligible_categories |
-      Landrace_name %in% selected_outside_eligible
+      Landrace_ID %in% selected_outside_eligible
   ) %>%
   droplevels()
 
@@ -257,12 +259,10 @@ landrace_panel_rare <- landrace_panel %>%
 sample_check <- landrace_panel_rare %>%
   summarise(
     n_obs = n(),
-    n_landraces = n_distinct(Landrace_name),
-    n_communities = n_distinct(Community_name)
+    n_landraces = n_distinct(Landrace_ID),
+    n_communities = n_distinct(Community)
   )
 print(sample_check)
-
-
 
 
 
@@ -287,9 +287,9 @@ write_csv(desc_rare, "descriptives_rare.csv")
 # 14. Primary analysis: rarity status
 # ----------------------------
 m_rarity_primary <- feols(
-  rarity_status ~ Timepoint * paid | Community_name + Landrace_name,
+  rarity_status ~ Timepoint * paid | Community + Landrace_ID,
   data = landrace_panel_rare,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 
@@ -297,15 +297,15 @@ m_rarity_primary <- feols(
 # 15. Secondary outcomes (mechanisms): households, plants
 # ----------------------------
 m_hh_primary <- feols(
-  no_households ~ Timepoint * paid | Community_name + Landrace_name,
+  no_households ~ Timepoint * paid | Community + Landrace_ID,
   data = landrace_panel_rare,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_total_primary <- feols(
-  avr_plants ~ Timepoint * paid | Community_name + Landrace_name,
+  avr_plants ~ Timepoint * paid | Community + Landrace_ID,
   data = landrace_panel_rare,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 
@@ -354,7 +354,7 @@ baseline_referenced_did_plot <- function(data, outcome, model, y_lab, y_limits =
   # Community-clustered baseline mean + SE
   baseline_by_comm <- data %>%
     filter(Timepoint == 0, paid == 0) %>%
-    group_by(Community_name) %>%
+    group_by(Community) %>%
     summarise(comm_mean = mean(.data[[outcome]], na.rm = TRUE), .groups = "drop")
   
   mu0 <- mean(baseline_by_comm$comm_mean, na.rm = TRUE)
@@ -426,13 +426,15 @@ rarity_line <- baseline_referenced_did_plot(
 household_line <- baseline_referenced_did_plot(
   landrace_panel_rare, "no_households", m_hh_primary,
   y_lab = "Households cultivating landrace",
-  dodge = 0.08
+  dodge = 0.08,
+  y_limits = c(0,25)
 )
 
 # ---- Fig. 4B (ii): plants per household ----
 plant_line <- baseline_referenced_did_plot(
   landrace_panel_rare, "avr_plants", m_total_primary,
-  y_lab = "Plants per household"
+  y_lab = "Plants per household",
+  y_limits = c(0,31)
 )
 
 # ---- Combine: Fig. 4A (top) + Fig. 4B panels (bottom row) ----
