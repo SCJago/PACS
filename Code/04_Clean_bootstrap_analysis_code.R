@@ -4,11 +4,10 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - hh_boot_35_37E.rds          (bootstrap-ready control household pool
-#                                  produced by 03_clean_control_household_
-#                                  sample_prep.R)
-#   - T1_T2_rarity_assessment_data.csv  (community x landrace survey data,
-#                                        T1 baseline + T2 follow-up)
+#   - hh_boot_35_37E.rds          (control household data - produced
+#                                  by script 03 but due to confidential
+#                                  coordinates provided in Data folder)
+#   - T1_T2_rarity_assessment_data_share.csv  (treated community data)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -69,7 +68,7 @@ library(patchwork)
 # 2. Load data
 # ----------------------------
 hh_boot <- readRDS("hh_boot_35_37E.rds")
-treated <- read_csv("T1_T2_rarity_assessment_data.csv", show_col_types = FALSE)
+treated <- read_csv("T1_T2_rarity_assessment_data_share.csv", show_col_types = FALSE)
 
 
 # ----------------------------
@@ -77,7 +76,7 @@ treated <- read_csv("T1_T2_rarity_assessment_data.csv", show_col_types = FALSE)
 # ----------------------------
 treated_summary <- treated %>%
   filter(T1_participants > 0, T2_participants > 0) %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
     T1_participants = first(T1_participants),
     T2_participants = first(T2_participants),
@@ -122,6 +121,32 @@ observed_treated_summary <- tibble(
 
 print(observed_treated_summary)
 
+# ----------------------------
+# 2c. Average landraces per household (descriptive)
+# ----------------------------
+
+# Control households (one row per household)
+control_hh_summary <- hh_boot %>%
+  summarise(
+    n_households = n(),
+    mean_T1 = mean(n_T1, na.rm = TRUE), sd_T1 = sd(n_T1, na.rm = TRUE),
+    median_T1 = median(n_T1, na.rm = TRUE),
+    mean_T2 = mean(n_T2, na.rm = TRUE), sd_T2 = sd(n_T2, na.rm = TRUE),
+    median_T2 = median(n_T2, na.rm = TRUE)
+  )
+print(control_hh_summary)
+
+# Treated communities (community-level averages, then summarised across communities)
+treated_hh_summary <- treated_summary %>%
+  summarise(
+    n_communities = n(),
+    mean_T1 = mean(avg_T1), sd_T1 = sd(avg_T1),
+    mean_T2 = mean(avg_T2), sd_T2 = sd(avg_T2),
+    # household-weighted version: total household-landrace pairs / total households
+    weighted_T1 = sum(avg_T1 * T1_participants) / sum(T1_participants),
+    weighted_T2 = sum(avg_T2 * T2_participants) / sum(T2_participants)
+  )
+print(treated_hh_summary)
 
 # ----------------------------
 # 4. Bootstrap settings
@@ -176,11 +201,11 @@ one_pooled_bootstrap <- function(treated_summary, hh_boot) {
   # Per-community effects, named by community
   community_effect_avg <- setNames(
     effects$effect_avg,
-    paste0("effect_avg_", effects$Community_name)
+    paste0("effect_avg_", effects$Community)
   )
   community_effect_unique <- setNames(
     effects$effect_unique,
-    paste0("effect_unique_", effects$Community_name)
+    paste0("effect_unique_", effects$Community)
   )
   
   c(
@@ -291,10 +316,10 @@ write_csv(
 # ----------------------------
 # 10. Community-level effects (Fig. 3B)
 # ----------------------------
-community_names <- treated_summary$Community_name
+community_names <- treated_summary$Community
 
 community_effects <- tibble(
-  Community_name = rep(community_names, times = 2),
+  Community = rep(community_names, times = 2),
   metric = rep(
     c("Average landraces per household", "Unique landraces per community"),
     each = length(community_names)
@@ -326,15 +351,15 @@ write_csv(
 # ----------------------------
 plot_df <- community_effects %>%
   mutate(
-    Community_name = as.character(Community_name),
+    Community = as.character(Community),
     metric = as.character(metric)
   )
 
-community_levels <- sort(unique(plot_df$Community_name))
+community_levels <- sort(unique(plot_df$Community))
 
 plot_df <- plot_df %>%
   mutate(
-    Community_name = factor(Community_name, levels = rev(community_levels))
+    Community = factor(Community, levels = rev(community_levels))
   )
 
 plot_df_avg <- plot_df %>%
@@ -345,7 +370,7 @@ plot_df_unique <- plot_df %>%
 
 make_effect_plot <- function(df, xlab, x_limits = NULL, show_y_labels = TRUE) {
   
-  p <- ggplot(df, aes(y = Community_name)) +
+  p <- ggplot(df, aes(y = Community)) +
     geom_vline(xintercept = 0, linetype = "dashed", colour = "black", linewidth = 0.4) +
     geom_errorbarh(
       aes(xmin = effect_lo, xmax = effect_hi),
@@ -380,7 +405,7 @@ p_avg <- make_effect_plot(
 p_unique <- make_effect_plot(
   plot_df_unique,
   xlab = "Community-level treatment effect for\n total unique landraces",
-  x_limits = c(-1, 15),
+  x_limits = c(-2, 15),
   show_y_labels = FALSE
 )
 
