@@ -4,12 +4,10 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - landrace_effect_analysis_df_long.csv   (produced by 06_Clean_
-#                                             landrace_rarity_effect_
-#                                             analysis.R)
-#
-#   - select_offers.csv                      (produced by 05_clean_
-#                                             model_offer_selection.R)
+#   - landrace_effect_analysis_df_long.csv   
+#     produced by script 06
+#   - select_offers.csv
+#     produced by script 05
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -27,9 +25,8 @@
 #   4. Restricts to non-contracted landraces, and estimates linear
 #      fixed-effects models (community + landrace FE, SEs clustered
 #      by community) testing whether post-implementation changes in
-#      rarity status, households cultivating, plant abundance, and
-#      disappearance for non-contracted landraces differed with
-#      programme coverage.
+#      rarity status, households cultivating, plant abundance, for 
+#      non-contracted landraces differed with programme coverage.
 #   5. Repeats the spillover models using two alternative programme
 #      intensity measures (count of contracts, GBP per farmer) as a
 #      robustness check.
@@ -58,10 +55,11 @@
 #
 #   ALL SPILLOVER MODEL COEFFICIENTS: tidied coefficients for every
 #       spillover model (share, count, GBP; all four outcomes)
-#       -> spillover_model_coefficients_all.csv
+#       -> model_coefficients_all.csv
 #
 # ============================================================
 
+setwd("~/Papers/PACS/Crowding_in_out_analysis/Clean_code")
 
 # ----------------------------
 # 0. Load packages
@@ -88,9 +86,8 @@ selected_bids <- read_csv("select_offers.csv", show_col_types = FALSE)
 # ----------------------------
 # 2. Check required columns are present
 # ----------------------------
-# Fails early with a clear message if a column is missing or was
-# renamed upstream, rather than erroring deep inside a model call.
-required_cols <- c("Community_name", "Landrace_name", "Timepoint", "paid",
+
+required_cols <- c("Community", "Landrace_ID", "Timepoint", "paid",
                    "rarity_status", "no_households", "avr_plants", "present")
 missing_cols <- setdiff(required_cols, names(landrace_panel))
 if (length(missing_cols) > 0) {
@@ -98,7 +95,7 @@ if (length(missing_cols) > 0) {
        paste(missing_cols, collapse = ", "))
 }
 
-required_bid_cols <- c("Community_name", "Landrace_name", "GBP", "No_farmers")
+required_bid_cols <- c("Community", "Landrace_ID", "GBP", "No_farmers")
 missing_bid_cols <- setdiff(required_bid_cols, names(selected_bids))
 if (length(missing_bid_cols) > 0) {
   stop("select_offers.csv is missing expected column(s): ",
@@ -109,24 +106,23 @@ if (length(missing_bid_cols) > 0) {
 # ----------------------------
 # 3. Clean
 # ----------------------------
-# - trim stray whitespace in identifier columns (a common source of
-#   join mismatches / phantom duplicate groups)
+# - trim stray whitespace in identifier columns 
 # - coerce Timepoint and paid to plain 0/1 integers, in case they were
 #   read in as text, logical, or factor
 # - drop rows with no landrace or community identifier, since these
 #   can't be used in any grouped calculation below
 landrace_panel <- landrace_panel %>%
   mutate(
-    Community_name = str_trim(as.character(Community_name)),
-    Landrace_name  = str_trim(as.character(Landrace_name)),
+    Community = str_trim(as.character(Community)),
+    Landrace_ID  = str_trim(as.character(Landrace_ID)),
     Timepoint = as.integer(Timepoint),
     paid      = as.integer(paid)
   ) %>%
-  filter(!is.na(Community_name), !is.na(Landrace_name), Community_name != "", Landrace_name != "")
+  filter(!is.na(Community), !is.na(Landrace_ID), Community != "", Landrace_ID != "")
 
 cat("Rows after cleaning:", nrow(landrace_panel), "\n")
-cat("Communities:", n_distinct(landrace_panel$Community_name), "\n")
-cat("Landraces:", n_distinct(landrace_panel$Landrace_name), "\n")
+cat("Communities:", n_distinct(landrace_panel$Community), "\n")
+cat("Landraces:", n_distinct(landrace_panel$Landrace_ID), "\n")
 cat("Timepoints present:", paste(sort(unique(landrace_panel$Timepoint)), collapse = ", "), "\n")
 
 
@@ -145,14 +141,14 @@ cat("Timepoints present:", paste(sort(unique(landrace_panel$Timepoint)), collaps
 #     as a robustness check on programme coverage below.
 community_payments <- selected_bids %>%
   mutate(
-    Community_name = as.character(Community_name) %>% str_trim() %>% str_squish(),
-    Landrace_name = as.character(Landrace_name) %>% str_trim() %>% str_squish(),
+    Community = as.character(Community) %>% str_trim() %>% str_squish(),
+    Landrace_ID = as.character(Landrace_ID) %>% str_trim() %>% str_squish(),
     GBP = as.numeric(GBP),
     No_farmers = as.numeric(No_farmers)
   ) %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
-    n_landraces_selected = n_distinct(Landrace_name),
+    n_landraces_selected = n_distinct(Landrace_ID),
     community_total_GBP = sum(GBP, na.rm = TRUE),
     No_farmers = No_farmers[!is.na(No_farmers)][1],
     community_GBP_per_farmer = if_else(!is.na(No_farmers) & No_farmers > 0, community_total_GBP / No_farmers, NA_real_),
@@ -167,8 +163,8 @@ write.csv(community_payments, "community_payments_summary.csv", row.names = FALS
 # Attach community project intensity to the panel
 landrace_panel <- landrace_panel %>%
   left_join(
-    community_payments %>% select(Community_name, n_landraces_selected, community_total_GBP, community_GBP_per_farmer),
-    by = "Community_name"
+    community_payments %>% select(Community, n_landraces_selected, community_total_GBP, community_GBP_per_farmer),
+    by = "Community"
   )
 
 
@@ -185,7 +181,7 @@ landrace_panel <- landrace_panel %>%
 #     used as a robustness check on the coverage measure.
 community_coverage <- landrace_panel %>%
   filter(Timepoint == 0) %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
     share_paid = mean(paid, na.rm = TRUE),
     no_paid = sum(paid, na.rm = TRUE),
@@ -193,7 +189,7 @@ community_coverage <- landrace_panel %>%
   )
 
 landrace_panel_coverage <- landrace_panel %>%
-  left_join(community_coverage, by = "Community_name")
+  left_join(community_coverage, by = "Community")
 
 
 # ----------------------------
@@ -207,10 +203,10 @@ landrace_panel_coverage <- landrace_panel %>%
 # file updated after the panel was last built) doesn't silently feed
 # a wrong count into the COUNT-based robustness models below.
 contract_count_check <- community_coverage %>%
-  select(Community_name, no_paid) %>%
+  select(Community, no_paid) %>%
   full_join(
-    community_payments %>% select(Community_name, n_landraces_selected),
-    by = "Community_name"
+    community_payments %>% select(Community, n_landraces_selected),
+    by = "Community"
   ) %>%
   mutate(matches = no_paid == n_landraces_selected)
 
@@ -233,14 +229,14 @@ if (nrow(contract_count_mismatches) > 0) {
 # ----------------------------
 baseline_diversity <- landrace_panel %>%
   filter(Timepoint == 0) %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
-    baseline_landrace_count = n_distinct(Landrace_name[present == 1]),
+    baseline_landrace_count = n_distinct(Landrace_ID[present == 1]),
     .groups = "drop"
   )
 
 landrace_panel_coverage <- landrace_panel_coverage %>%
-  left_join(baseline_diversity, by = "Community_name")
+  left_join(baseline_diversity, by = "Community")
 
 
 # ============================================================
@@ -258,7 +254,7 @@ landrace_panel_coverage <- landrace_panel_coverage %>%
 # being checked against.
 baseline_community_outcomes <- landrace_panel_coverage %>%
   filter(Timepoint == 0, paid == 0) %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
     baseline_mean_rarity = mean(rarity_status, na.rm = TRUE),
     baseline_mean_hh = mean(no_households, na.rm = TRUE),
@@ -281,12 +277,6 @@ print(baseline_community_outcomes)
 # contracted in each community and baseline conservation conditions -
 # the test reported in the manuscript (Supplementary Table 3).
 run_spearman <- function(x, y, label) {
-  # exact = FALSE: with only 15 communities, tied values are common
-  # (e.g. baseline_landrace_count is an integer), and an exact
-  # Spearman p-value is only valid without ties. Setting this
-  # explicitly uses the standard asymptotic approximation directly,
-  # instead of letting cor.test() fall back to it automatically with
-  # a "Cannot compute exact p-value with ties" warning each time.
   test <- cor.test(x, y, method = "spearman", exact = FALSE)
   tibble(
     baseline_variable = label,
@@ -331,56 +321,21 @@ non_contracted_panel <- landrace_panel_coverage %>% filter(paid == 0)
 # under contract. Community and landrace fixed effects control for
 # time-invariant differences; standard errors clustered by community.
 m_crowd_rarity_SHARE <- feols(
-  rarity_status ~ Timepoint:share_paid | Community_name + Landrace_name,
+  rarity_status ~ Timepoint:share_paid | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_crowd_hh_SHARE <- feols(
-  no_households ~ Timepoint:share_paid | Community_name + Landrace_name,
+  no_households ~ Timepoint:share_paid | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_crowd_plants_SHARE <- feols(
-  avr_plants ~ Timepoint:share_paid | Community_name + Landrace_name,
+  avr_plants ~ Timepoint:share_paid | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
-)
-
-
-# ----------------------------
-# 11. Disappearance model (share-based)
-# ----------------------------
-# Restricted to non-contracted landraces that were present within a
-# community at baseline, so the outcome captures the probability of
-# subsequent disappearance.
-#
-# share_paid is constant within a community (it's a community-level
-# measure), and disappearance_panel has already been collapsed to one
-# row per community x landrace - so there is no within-community
-# variation left for share_paid to explain once Community_name fixed
-# effects are included. Only Landrace_name fixed effects are used
-# here (not Community_name), otherwise share_paid is exactly
-# collinear with the community fixed effect and the model is
-# unidentified.
-disappearance_panel <- non_contracted_panel %>%
-  group_by(Community_name, Landrace_name) %>%
-  summarise(
-    present_bl = present[Timepoint == 0][1],
-    present_el = present[Timepoint == 1][1],
-    share_paid = first(share_paid),
-    no_paid = first(no_paid),
-    community_GBP_per_farmer = first(community_GBP_per_farmer),
-    .groups = "drop"
-  ) %>%
-  filter(present_bl == 1) %>%
-  mutate(disappeared = as.integer(present_el == 0))
-
-m_loss_spill_SHARE <- feols(
-  disappeared ~ share_paid | Landrace_name,
-  data = disappearance_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 
@@ -390,8 +345,7 @@ m_loss_spill_SHARE <- feols(
 models_spill_share <- list(
   "Rarity status" = m_crowd_rarity_SHARE,
   "Households"    = m_crowd_hh_SHARE,
-  "Plants"        = m_crowd_plants_SHARE,
-  "Disappearance" = m_loss_spill_SHARE
+  "Plants"        = m_crowd_plants_SHARE
 )
 
 modelsummary(
@@ -415,34 +369,29 @@ modelsummary(
 # 13. Robustness models: absolute count of contracts
 # ----------------------------
 m_crowd_rarity_COUNT <- feols(
-  rarity_status ~ Timepoint:no_paid | Community_name + Landrace_name,
+  rarity_status ~ Timepoint:no_paid | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_crowd_hh_COUNT <- feols(
-  no_households ~ Timepoint:no_paid | Community_name + Landrace_name,
+  no_households ~ Timepoint:no_paid | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_crowd_plants_COUNT <- feols(
-  avr_plants ~ Timepoint:no_paid | Community_name + Landrace_name,
+  avr_plants ~ Timepoint:no_paid | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
-m_loss_spill_COUNT <- feols(
-  disappeared ~ no_paid | Landrace_name,
-  data = disappearance_panel,
-  cluster = ~Community_name
-)
+
 
 models_spill_count <- list(
   "Rarity status" = m_crowd_rarity_COUNT,
   "Households"    = m_crowd_hh_COUNT,
-  "Plants"        = m_crowd_plants_COUNT,
-  "Disappearance" = m_loss_spill_COUNT
+  "Plants"        = m_crowd_plants_COUNT
 )
 
 modelsummary(
@@ -458,34 +407,28 @@ modelsummary(
 # 14. Robustness models: GBP per farmer
 # ----------------------------
 m_crowd_rarity_GBP <- feols(
-  rarity_status ~ Timepoint:community_GBP_per_farmer | Community_name + Landrace_name,
+  rarity_status ~ Timepoint:community_GBP_per_farmer | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_crowd_hh_GBP <- feols(
-  no_households ~ Timepoint:community_GBP_per_farmer | Community_name + Landrace_name,
+  no_households ~ Timepoint:community_GBP_per_farmer | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
 m_crowd_plants_GBP <- feols(
-  avr_plants ~ Timepoint:community_GBP_per_farmer | Community_name + Landrace_name,
+  avr_plants ~ Timepoint:community_GBP_per_farmer | Community + Landrace_ID,
   data = non_contracted_panel,
-  cluster = ~Community_name
+  cluster = ~Community
 )
 
-m_loss_spill_GBP <- feols(
-  disappeared ~ community_GBP_per_farmer | Landrace_name,
-  data = disappearance_panel,
-  cluster = ~Community_name
-)
 
 models_spill_gbp <- list(
   "Rarity status" = m_crowd_rarity_GBP,
   "Households"    = m_crowd_hh_GBP,
-  "Plants"        = m_crowd_plants_GBP,
-  "Disappearance" = m_loss_spill_GBP
+  "Plants"        = m_crowd_plants_GBP
 )
 
 modelsummary(
@@ -513,4 +456,4 @@ coefs_gbp <- map_dfr(models_spill_gbp, broom::tidy, .id = "model") %>%
 
 coefs_all <- bind_rows(coefs_share, coefs_count, coefs_gbp)
 
-write_csv(coefs_all, "spillover_model_coefficients_all.csv")
+write_csv(coefs_all, "model_coefficients_all.csv")
