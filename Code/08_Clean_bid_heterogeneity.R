@@ -5,31 +5,18 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - clean_offers.csv                     (clean tender offers)
-#
-#   - select_offers.csv                    (selected offers produced by
-#                                          05_clean_model_offer_seelction.R)
-#   - community_name_crosswalk.csv      
-#   - landrace_name_id_crosswalk.csv    
-#
-#   - Use_data_final.csv                   (trait/use scores per landrace)
-#
-#   - Landrace_size_data_clean.csv         (landrace-level plant measurements)
-#
-#   - enset_per_farmer_by_community.csv    (mean enset plants grown per farmer
-#                                           by community) 
-#
-#   - gender_balance.csv                   (farmer gender balance by community)
+#   - clean_offers.csv                  
+#   - select_offers.csv                   (produced in script 05)
+#   - landrace_tender_id_crosswalk.csv    
+#   - Use_data_final_share.csv
+#   - Landrace_size_data_clean_share.csv
+#   - enset_per_farmer_by_community.csv  
+#   - gender_balance.csv
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
 # PART A - COMMUNITY BID PRICE PLOT
-#   select_offers.csv identifies which offers were selected, but uses
-#   full community/landrace names, while clean_offers.csv identifies
-#   bids by community letter code and landrace index - so selection
-#   status is linked across the two via the crosswalk files, checking
-#   for any offers that fail to match either crosswalk. For each
-#   community, plots the average bid price per plant (bars + SE),
+#   For each community, plots the average bid price per plant (bars + SE),
 #   with individual offer-level bid prices overlaid as jittered
 #   points.
 #
@@ -43,10 +30,6 @@
 #   Model selection via dredge (AICc) picks a single best model (no
 #   model averaging); diagnostics for that model, and effect plots
 #   for its significant predictors only.
-#
-#   (A PCA-based alternative to this model, using orthogonal
-#   components in place of the collinear individual traits, is
-#   maintained separately - not part of this script.)
 #
 # OUTPUTS GENERATED
 # ----------------------
@@ -136,16 +119,13 @@ fmt_p <- function(x) {
 # ----------------------------
 clean_offers <- read.csv("clean_offers.csv")
 select_offers <- read.csv("select_offers.csv")
-community_crosswalk <- read.csv("community_name_crosswalk.csv")
-landrace_crosswalk <- read.csv("landrace_name_id_crosswalk.csv")
-
+landrace_tender_crosswalk <- read.csv("landrace_tender_crosswalk_share.csv")
 
 # ----------------------------
 # 2. Link selected offers to community letter codes and landrace index
 # ----------------------------
 selection_join <- select_offers %>%
-  left_join(community_crosswalk, by = "Community_name") %>%
-  left_join(landrace_crosswalk, by = "Landrace_name")
+  left_join(landrace_tender_crosswalk, by = "Landrace_ID")
 
 # Flag any selected offer that failed to match a community and/or
 # landrace via the crosswalks (e.g. a spelling mismatch) - these
@@ -156,7 +136,7 @@ unmatched_selection <- selection_join %>%
 if (nrow(unmatched_selection) > 0) {
   warning(
     nrow(unmatched_selection), " row(s) in select_offers.csv could not be ",
-    "matched to a community and/or landrace via the crosswalks - see ",
+    "matched to a  landrace via the crosswalk - see ",
     "unmatched_selection. These will NOT be flagged as selected offers below."
   )
   print(unmatched_selection)
@@ -335,8 +315,8 @@ ggsave(
 # ----------------------------
 # clean_offers is already loaded (step 1) - reused here rather than
 # re-reading the same file.
-use_data      <- read.csv("Use_data_final.csv")
-size_data     <- read.csv("Landrace_size_data_clean.csv")
+use_data      <- read.csv("Use_data_final_share.csv")
+size_data     <- read.csv("Landrace_size_data_clean_share.csv")
 
 community_enset  <- read.csv("enset_per_farmer_by_community.csv")
 community_gender <- read.csv("gender_balance.csv")
@@ -349,11 +329,6 @@ community_characteristics$prop_women <- community_characteristics$women / commun
 # 7b. Consistency check: community codes match between
 # community_characteristics and clean_offers
 # ----------------------------
-# community_enset's community codes came from Excel sheet names
-# (Tender_outputs_all_communities.xlsx); clean_offers$community comes
-# from a separate source. If the two don't use the same codes, the
-# join in step 10 below would silently produce NA for
-# mean_enset_per_farmer/farmers/prop_women rather than erroring.
 offer_communities <- clean_offers %>% distinct(community)
 
 unmatched_offer_communities <- offer_communities %>%
@@ -376,12 +351,12 @@ if (nrow(unmatched_offer_communities) > 0) {
 # ----------------------------
 # 7c. Build landrace index lookup
 # ----------------------------
-# clean_offers only has landrace_index (numeric), not a landrace name -
-# landrace_crosswalk (Landrace_name <-> Landrace_id_tender, already
+# clean_offers only has landrace_index (numeric), not a landrace ID -
+# landrace_crosswalk (Landrace_ID <-> Landrace_id_tender, already
 # loaded in Part A) provides that mapping.
-landrace_index_lookup <- landrace_crosswalk %>%
-  rename(Landrace = Landrace_name, landrace_index = Landrace_id_tender) %>%
-  select(Landrace, landrace_index)
+landrace_index_lookup <- landrace_tender_crosswalk %>%
+  rename(Landrace_ID = Landrace_ID, landrace_index = Landrace_id_tender) %>%
+  select(Landrace_ID, landrace_index)
 
 
 # ----------------------------
@@ -413,7 +388,7 @@ size_summary <- size_data %>%
     
     pseudostem_volume_growth = pseudostem_volume / age_years
   ) %>%
-  group_by(Landrace) %>%
+  group_by(Landrace_ID) %>%
   summarise(
     pseudostem_volume_growth_mean = mean(pseudostem_volume_growth, na.rm = TRUE),
     maturity_age_mean             = mean(maturity_age, na.rm = TRUE),
@@ -425,7 +400,7 @@ size_summary <- size_data %>%
 # 9. Build landrace predictor table + trait correlation plot
 # ----------------------------
 landrace_predictors <- use_data %>%
-  left_join(size_summary, by = "Landrace")
+  left_join(size_summary, by = "Landrace_ID")
 
 main_traits <- landrace_predictors %>%
   select(
@@ -549,17 +524,16 @@ offers_model <- clean_offers %>%
     individuals > 0,
     is.finite(cost_etb),
     is.finite(cost_per_plant_offer_etb),
-    !is.na(Landrace)
+    !is.na(Landrace_ID)
   )
 
 # Consistency check: does every Landrace name here have a match in
 # landrace_predictors? Unlike the check above, an unmatched Landrace
 # is NOT filtered out below - it would silently carry NA through every
-# use-trait column and only surface later as a cryptic na.fail error
-# from lme()/dredge(), with no indication of which landrace caused it.
+# use-trait column and only surface later as a na.fail error.
 unmatched_landrace_predictors <- offers_model %>%
-  distinct(Landrace) %>%
-  anti_join(landrace_predictors, by = "Landrace")
+  distinct(Landrace_ID) %>%
+  anti_join(landrace_predictors, by = "Landrace_ID")
 
 if (nrow(unmatched_landrace_predictors) > 0) {
   warning(
@@ -575,7 +549,7 @@ if (nrow(unmatched_landrace_predictors) > 0) {
 }
 
 offers_model <- offers_model %>%
-  left_join(landrace_predictors, by = "Landrace") %>%
+  left_join(landrace_predictors, by = "Landrace_ID") %>%
   mutate(
     community = factor(community)
   ) %>%
@@ -590,7 +564,7 @@ bid_summary <- offers_model %>%
   summarise(
     n_bids = n(),
     n_communities = n_distinct(community),
-    n_landraces = n_distinct(Landrace),
+    n_landraces = n_distinct(Landrace_ID),
     min_price_usd = min(cost_per_plant_offer_usd, na.rm = TRUE),
     max_price_usd = max(cost_per_plant_offer_usd, na.rm = TRUE),
     mean_price_usd = mean(cost_per_plant_offer_usd, na.rm = TRUE)
@@ -605,11 +579,10 @@ write_csv(bid_summary, file.path(out_dir, "bid_price_range_summary.csv"))
 # ----------------------------
 # Consistency check: how many offers have missing size data (from
 # Landrace_size_data_clean.csv) that will be mean-imputed below?
-
 missing_size_offers <- offers_model %>%
   filter(is.na(pseudostem_volume_growth_mean) | is.na(maturity_age_mean))
 
-missing_size_landraces <- missing_size_offers %>% distinct(Landrace)
+missing_size_landraces <- missing_size_offers %>% distinct(Landrace_ID)
 
 if (nrow(missing_size_offers) > 0) {
   warning(
@@ -622,6 +595,7 @@ if (nrow(missing_size_offers) > 0) {
 } else {
   cat("No missing pseudostem_volume_growth_mean or maturity_age_mean values.\n")
 }
+
 # Keep unscaled versions of log_individuals and pseudostem growth so
 # effect-plot axes can be shown in original units.
 offers_model <- offers_model %>%
@@ -675,7 +649,7 @@ sd_wm   <- sd(offers_model$prop_women_unscaled)
 # ----------------------------
 mod_null <- lmer(
   log(cost_per_plant_offer_usd + 1) ~ 1 +
-    (1 | community) + (1 | Landrace),
+    (1 | community) + (1 | Landrace_ID),
   data = offers_model
 )
 
@@ -685,7 +659,7 @@ vc <- as.data.frame(VarCorr(mod_null))
 # best_mod variance components computed later (step 14) - both sets
 # get saved to their own CSV.
 community_var_null <- vc$vcov[vc$grp == "community"]
-landrace_var_null   <- vc$vcov[vc$grp == "Landrace"]
+landrace_var_null   <- vc$vcov[vc$grp == "Landrace_ID"]
 resid_var_null      <- vc$vcov[vc$grp == "Residual"]
 
 total_var_null <- community_var_null + landrace_var_null + resid_var_null
@@ -701,7 +675,7 @@ mod_comm_aov <- aov(
 summary(mod_comm_aov)
 
 mod_landrace_aov <- aov(
-  log(cost_per_plant_offer_usd + 1) ~ Landrace,
+  log(cost_per_plant_offer_usd + 1) ~ Landrace_ID,
   data = offers_model
 )
 summary(mod_landrace_aov)
@@ -734,10 +708,7 @@ write_csv(null_model_variance_components, file.path(out_dir, "null_model_varianc
 # 11c. Variance inflation factors (VIF)
 # ----------------------------
 # Flags predictors whose SE is inflated by correlation with the other
-# predictors (VIF > 5 by convention). Computed via a plain lm() proxy
-# with the same fixed-effect formula as global_mod - VIF depends only
-# on the predictor correlation structure, not the response, random
-# effects, or weights, so lme() isn't needed here.
+# predictors (VIF > 5). 
 vif_proxy_mod <- lm(
   log(cost_per_plant_offer_usd + 1) ~
     log_individuals +
@@ -803,8 +774,7 @@ global_mod <- lme(
 # 13. Model selection - single best model, no averaging
 # ----------------------------
 # subset =: interaction terms are only tested in models that also
-# include both of their main effects (standard marginality practice
-# for interpreting interactions).
+# include both of their main effects 
 dredge_results <- dredge(
   global_mod,
   rank = "AICc",
@@ -825,8 +795,7 @@ summary(best_mod)
 # 14. Final reported model
 # ----------------------------
 # best_mod (the single top-ranked model from dredge, step 13) is used
-# directly below - this is the sole reported model, no model
-# averaging is used anywhere in this script.
+# directly below 
 r.squaredGLMM(best_mod)
 intervals(best_mod)
 
@@ -868,15 +837,6 @@ main_model_variance_icc <- tibble(
 )
 
 write_csv(main_model_variance_icc, file.path(out_dir, "main_model_variance_icc.csv"))
-
-# Optional simple slopes check
-sort(unique(offers_model$Kocho_c))
-emtrends(
-  best_mod,
-  ~ Kocho_c,
-  var = "pseudostem_volume_growth_mean",
-  at = list(Kocho_c = c(-1.793722, -0.793722, 0.206278))
-)
 
 
 # ----------------------------
@@ -945,15 +905,7 @@ ggsave(
 # ----------------------------
 # 16. Effect plots - significant predictors only
 # ----------------------------
-# best_mod's fixed effects: Amicho (p=.130, NS), Drought (p=.021,
-# sig), Fodder (p=.001, sig), Kocho_c main effect (p=.792, NS),
-# log_individuals (p<.001, sig), prop_women (p=.034, sig),
-# pseudostem growth main effect (p=.529, NS), Kocho_c:growth
-# interaction (p<.001, sig). Amicho and the Kocho_c/growth main
-# effects are NOT plotted below - only significant terms are: Drought,
-# Fodder, log_individuals, prop_women, and the interaction (the
-# interaction is kept despite Kocho_c's own null main effect, since
-# the interaction term itself is significant).
+
 plot_drought <- ggpredict(best_mod, terms = "Drought")
 plot_fodder <- ggpredict(best_mod, terms = "Fodder")
 plot_individuals <- ggpredict(best_mod, terms = "log_individuals [all]")
@@ -1143,3 +1095,4 @@ ggsave(
   height = 7,
   dpi = 300
 )
+
