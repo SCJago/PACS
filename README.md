@@ -97,6 +97,7 @@ in this pipeline:
 | `T1_T2_rarity_assessment_data_share.csv` | Community x landrace survey data, T1 baseline + T2 follow-up | 01, 04, 06, 09 |
 | `Use_data_final_share.csv` | Trait/use scores per landrace | 02, 08 |
 | `clean_control_hh_data_sharenolatlon.csv` | Control household data: T1/T2 landrace lists, years, coordinates removed for confidentiality | 03 |
+| `hh_boot_35_37E.rds` | cleaned control household data ready for bootstrapping, produced by script 3 but requires household lat lon data to produce so added here without identifying info to be able to reproduce analysis | 04 |
 | `clean_offers.csv` | Cleaned tender offers | 05, 08 |
 | `gender_balance.csv` | Community, farmers, women | 05, 08 |
 | `landrace_tender_crosswalk_share.csv` | Landrace_ID <-> Landrace_index_tender | 05, 08 |
