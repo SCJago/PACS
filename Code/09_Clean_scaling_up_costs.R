@@ -5,11 +5,8 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - T1_T2_rarity_assessment_data.csv     (community x landrace survey data
-#                                           T1 baseline + T2 follow up)
-#
-#   - select_offers.csv                    (final selected offers, produced by
-#                                           05_clean_model_offer_selection.R)
+#   - T1_T2_rarity_assessment_data_share.csv 
+#   - select_offers.csv                       (produced in script 05)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -21,9 +18,7 @@
 #   1. Household gains: change in cultivating households per
 #      community between baseline (T1) and follow-up (T2).
 #   2. Community-level total paid: total compensation actually paid
-#      per community, summed directly from select_offers.csv's Birr
-#      column - NOT hardcoded, so this updates automatically if the
-#      underlying selection data changes.
+#      per community, summed directly from select_offers.csv's 
 #   3. Cost per additional household: total paid per community / hh
 #      gain, summarised as the interquartile range (25th/50th/75th
 #      percentile) across communities to capture cost heterogeneity.
@@ -70,11 +65,11 @@ etb_to_usd <- 0.0183
 # ----------------------------
 # 1. Load landrace change data
 # ----------------------------
-T1_T2_change_dat <- read_csv("T1_T2_rarity_assessment_data.csv")
+T1_T2_change_dat <- read_csv("T1_T2_rarity_assessment_data_share.csv")
 
 T1_T2_simple <- T1_T2_change_dat %>%
   select(
-    Community_name,
+    Community,
     T1_no_households,
     T2_no_households
   )
@@ -87,7 +82,7 @@ community_gain <- T1_T2_simple %>%
   mutate(
     change_households = T2_no_households - T1_no_households
   ) %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
     hh_gain = sum(change_households, na.rm = TRUE),
     .groups = "drop"
@@ -99,10 +94,7 @@ community_gain <- T1_T2_simple %>%
 # ----------------------------
 # select_offers.csv includes the contracted price (Birr) directly for
 # each selected landrace - total paid per community is the sum of
-# Birr across every landrace selected in that community. No join to
-# clean_offers.csv or the crosswalks is needed, since the cost is
-# already here - this gives the real, current total per community
-# instead of a hardcoded snapshot that goes stale if selections change.
+# Birr across every landrace selected in that community. 
 select_offers <- read_csv("select_offers.csv")
 
 # Consistency check: any selected offer with a missing Birr value
@@ -121,7 +113,7 @@ if (nrow(missing_birr) > 0) {
 }
 
 community_total_paid <- select_offers %>%
-  group_by(Community_name) %>%
+  group_by(Community) %>%
   summarise(
     total_paid_ETB = sum(Birr, na.rm = TRUE),
     .groups = "drop"
@@ -137,7 +129,7 @@ write_csv(community_total_paid, "community_total_paid.csv")
 # 4. Calculate community-level cost per additional household
 # ----------------------------
 community_cost_per_household <- community_gain %>%
-  left_join(community_total_paid, by = "Community_name") %>%
+  left_join(community_total_paid, by = "Community") %>%
   filter(!is.na(total_paid_USD)) %>%
   filter(hh_gain > 0) %>%
   mutate(
@@ -190,7 +182,7 @@ landrace_scenarios <- tribble(
 # safe_threshold: target number of cultivating households per
 # landrace, a precautionary benchmark from conservation genetic theory
 # (Drucker & Ramirez 2020; Franklin 1980; Soule 1980).
-prop_safe <- 6/142
+prop_safe <- 6/141
 safe_threshold <- 50
 
 
