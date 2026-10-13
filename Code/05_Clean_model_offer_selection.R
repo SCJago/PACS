@@ -7,10 +7,9 @@
 #   - clean_offers.csv                      (cleaned tender
 #                                             offers)
 #   - gender_balance.csv                    (community, farmers, women)
-#   - landrace_name_id_crosswalk.csv        (Landrace_name <-> Landrace_id_tender)
-#   - landrace_avg_status_landscape.csv     (Landrace_name, landscape_category,
-#                                            produced by 01_clean_rarity_status.R)
-#   - community_name_crosswalk.csv          (Community <-> Community_name)
+#   - landrace_tender_crosswalk_share.csv        (Landrace_ID <-> Landrace_index_tender)
+#   - landrace_avg_status_landscape.csv     (Landrace_name, landscape_category - produced
+#                                            in script 01)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -26,10 +25,7 @@
 # OUTPUTS GENERATED
 # ----------------------
 #   select_offers.csv   final selected offers: community, landrace,
-#       plants, cost (Birr/GBP), and number of farmers.    
-#       (used in 06_clean_landrace_rarity_effect_analysis.R,
-#       07_clean_crowding_in_out_analysis.R, 08_clean_bid_heterogeneity.R,
-#       09_clean_scaling_up_costs.R)
+#       plants, cost (Birr/GBP), and number of farmers.
 #
 # ============================================================
 
@@ -233,13 +229,13 @@ cat("Max individuals at (max landraces, min cost):", max_individuals, "\n")
 # ----------------------------
 # 8. Stage 4 tie-break: maximise rarity
 # ----------------------------
-landrace_name_id_crosswalk <- read.csv("landrace_name_id_crosswalk.csv")
+landrace_tender_id_crosswalk <- read.csv("landrace_tender_crosswalk_share.csv")
 
 landscape_rarity <- read.csv("landrace_avg_status_landscape.csv")
-landscape_rarity <- subset(landscape_rarity, select = c(Landrace_name, landscape_category))
+landscape_rarity <- subset(landscape_rarity, select = c(Landrace_ID, landscape_category))
 
-landscape_rarity_w_id <- left_join(landrace_name_id_crosswalk, landscape_rarity,
-                                   by = c("Landrace_name"))
+landscape_rarity_w_id <- left_join(landrace_tender_id_crosswalk, landscape_rarity,
+                                   by = c("Landrace_ID"))
 
 rarity_tbl <- landscape_rarity_w_id %>%
   transmute(
@@ -257,6 +253,12 @@ rarity_tbl <- landscape_rarity_w_id %>%
     )
   ) %>%
   distinct(landrace_index, .keep_all = TRUE)
+
+rarity_counts <- rarity_tbl %>%
+  count(landscape_category, rarity_score, name = "n_landraces") %>%
+  arrange(rarity_score)
+
+print(rarity_counts)
 
 offers_rarity <- clean_offers %>%
   left_join(rarity_tbl %>% select(landrace_index, rarity_score), by = "landrace_index") %>%
@@ -320,21 +322,19 @@ print(sel_pairs_rarity)
 # ----------------------------
 # 10. Build select_offers.csv (final selected offers)
 # ----------------------------
-community_name_crosswalk <- read.csv("community_name_crosswalk.csv")
 
 select_offers <- selected_rarity %>%
-  left_join(community_name_crosswalk, by = c("community" = "Community")) %>%
-  left_join(landrace_name_id_crosswalk, by = c("landrace_index" = "Landrace_id_tender")) %>%
+  left_join(landrace_tender_id_crosswalk, by = c("landrace_index" = "Landrace_id_tender")) %>%
   left_join(gender_df %>% select(community, farmers), by = "community") %>%
   transmute(
-    Community_name = Community_name,
-    Landrace_name  = Landrace_name,
+    Community = community,
+    Landrace_ID  = Landrace_ID,
     Plants         = individuals,
     Birr           = cost_etb,
     GBP            = round(cost_etb / fx),
     No_farmers     = farmers
   ) %>%
-  arrange(Community_name, Landrace_name)
+  arrange(Community, Landrace_ID)
 
 write.csv(select_offers, "select_offers.csv", row.names = FALSE)
 print(select_offers)
