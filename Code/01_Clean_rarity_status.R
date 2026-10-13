@@ -372,9 +372,7 @@ threatened_share <- landrace_avg_status_landscape %>%
     share_lost       = n_lost / n_total
   )
 
-# Headline numbers reported in the manuscript text, e.g.:
-# "141 unique enset landraces, of which 64 occurred in two or less
-#  communities and 36 were known but had become locally extinct"
+# Headline numbers reported in the manuscript text
 headline_numbers <- landrace_avg_status_landscape %>%
   filter(!is.na(landscape_category), landscape_category != "Outside expected range") %>%
   summarise(
