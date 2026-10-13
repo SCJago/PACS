@@ -2,7 +2,12 @@
 # PACS CONTROL HOUSEHOLDS: LANDRACE CLEANING AND ANALYSIS
 # ============================================================
 #
-# FILES NEEDED
+# FILES NEEDED 
+#  (not provided for confidentiality - control hh data without coordinates 
+#  provided as "clean_control_hh_data_sharenolatlon.csv" - required
+#  output for next script "hh_boot_35-37E.rds" is provided as this does not
+#  contain identifying information)
+#
 # ----------------------
 #   - clean_control_hh_data.csv     (control household data: T1/T2
 #                                     landrace lists, coordinates, years)
@@ -23,8 +28,8 @@
 # OUTPUTS GENERATED
 # ----------------------
 #   hh_boot_35_37E.csv / hh_boot_35_37E.rds   bootstrap-ready control
-#       household pool restricted to 35-37 deg E (used by 04_clean_bootstrap_
-#       analysis_code.R).
+#       household pool restricted to 35-37 deg E (used by the downstream
+#       pooled bootstrap script).
 #
 #   agroecological_map_with_zoom_inset.png    study area map: agroecological
 #       zones, treated communities, used/excluded control households,
@@ -114,23 +119,16 @@ hh_boot <- control_hh_data %>%
   select(
     hh_id,
     T1_Year,
-    longitude,
-    latitude,
     T1_clean,
     T2_clean,
     n_T1,
     n_T2,
-    lost_row,
-    new_row,
     n_lost_row,
     n_new_row,
-    loss_rate_row
   ) %>%
   mutate(
     T1_clean = map(T1_clean, ~ str_trim(.x)),
-    T2_clean = map(T2_clean, ~ str_trim(.x)),
-    lost_row = map(lost_row, ~ str_trim(.x)),
-    new_row  = map(new_row, ~ str_trim(.x))
+    T2_clean = map(T2_clean, ~ str_trim(.x))
   )
 
 
@@ -141,8 +139,8 @@ hh_boot_save <- hh_boot %>%
   mutate(
     T1_clean = map_chr(T1_clean, ~ paste(.x, collapse = ", ")),
     T2_clean = map_chr(T2_clean, ~ paste(.x, collapse = ", ")),
-    lost_row = map_chr(lost_row, ~ paste(.x, collapse = ", ")),
-    new_row  = map_chr(new_row, ~ paste(.x, collapse = ", "))
+    n_lost_row = map_chr(n_lost_row, ~ paste(.x, collapse = ", ")),
+    n_new_row  = map_chr(n_new_row, ~ paste(.x, collapse = ", "))
   )
 
 write.csv(hh_boot_save, "hh_boot_35_37E.csv", row.names = FALSE)
