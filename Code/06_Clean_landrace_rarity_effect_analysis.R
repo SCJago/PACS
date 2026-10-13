@@ -54,7 +54,7 @@
 # ----------------------------
 # 0. Set working directory
 # ----------------------------
-setwd("~/Papers/PACS/Landrace_level_effectiveness_analysis/Clean_code/Cleaning_data")
+setwd("~/Papers/PACS/Landrace_level_effectiveness_analysis/Clean_code")
 
 
 # ----------------------------
