@@ -1,0 +1,53 @@
+hh_id,T1_clean,T2_clean,n_T1,n_T2,n_lost_row,n_new_row,T1_Year
+1,bosa; yama,bosa; yama,2,2,0,0,2023
+2,yanaga; magne,yanaga; magne,2,2,0,0,2023
+3,bay oodoo,bay oodoo,1,1,0,0,2023
+4,bay; baboo; tsimbe,bay; baboo; tsimbe,3,3,0,0,2023
+5,nobo; bocho; areko; gushiro; bajo; kallo; chamero,,7,0,7,0,2023
+6,nobo; areko; bocho,nobo; bocho; outero; genno; buto,3,5,1,3,2023
+7,chele bocho; bajo; neche bocho; nobo; bombo,chele bocho; bajo; neche bocho; nobo; bombo,5,5,0,0,2023
+8,gishindo; genno; bocho; gayo; shouri; outero,gishindo; genno; bocho; shouri; adele bocho; nobo,6,6,2,2,2020
+9,eppo; gayo; bombo; bocho; outero; chelle,eppo; gayo; bombo; bocho; areko; yeko,6,6,2,2,2020
+10,eppo; shoura; bombo; achecho,,4,0,4,0,2020
+11,nobo; bombo,,2,0,2,0,2023
+12,neche bocho; chele bocho; outero; kallo,,4,0,4,0,2023
+13,nobo; warimoche; achecho,nobo; warimoche; achecho; outero; bocho,3,5,0,2,2020
+14,kokar,kokar,1,1,0,0,2020
+15,genno; nobo; outo; badadi,genno; nobo; badadi,4,3,1,0,2020
+16,nobo; anchero; genno,nobo; anchero; genno,3,3,0,0,2020
+17,nobo; botecho; anchero,nobo; botecho; anchero,3,3,0,0,2023
+18,nobo; genno; anchero; bouriti; astara,nobo; genno; anchero; bouriti,5,4,1,0,2020
+19,nobo; wagu,nobo; wagu,2,2,0,0,2023
+20,wooto; nobo; sheshe; anchero,wooto; nobo; sheshe; anchero,4,4,0,0,2023
+21,nobo; gori,nobo; gori; 1 medicinal,2,3,0,1,2023
+22,gimbo; kokeri; kidode,gimbo; kokeri; kidode,3,3,0,0,2023
+23,nobo; gimbo; gessero; guariye; ellewe,nobo; gimbo; gessero; guariye; ellewe; agade,5,6,0,1,2023
+24,gimbo; nobo; gushiro,gimbo; nobo; gushiro; shanay,3,4,0,1,2023
+25,lemat; qore,lemat; qore,2,2,0,0,2020
+26,yesherakinke; nechwe; amerat; inniba; ganchwe; yekeswa; tikuramerat; gimbower,yesherakinke; nechwe; amerat; inniba; ganchwe; yekeswa; kebena; gimbower,8,8,1,1,2018
+27,nechwe; yekeswa; gwuadamerat; bishamerat; astara; guariye; ganchwe; yesherakinke; lemat,nechwe; yekeswa; gwuadamerat; bishamerat; astara; ganchwe; yesherakinke; amerat; deri,9,9,2,2,2018
+28,separa; ganchwe; yesherakinke; nechwe,ganchwe; nechwe; amerat,4,3,2,1,2018
+29,yekeswa; guariye; yesherakinke; amerat; nechwe,yekeswa; guariye; yesherakinke; amerat; nechwe; kebena; ganchwe,5,7,0,2,2018
+30,ankafye; astara; gimbower; nechwe; yekeswa; zober,ankafye; gimbower; nechwe; yekeswa; zober,6,5,1,0,2022
+31,ado; ganticha; kiticho; gulumo; askala; medashu; gosalo; derassiado,ado; ganticha; hekeche; kiticho; gulumo; lemicho; askala; medashu; birra; huwisho; gosalo; derassiado,8,12,0,4,2018
+32,derassiado; kiticho; ganticha; ado; medashu; huwisho,derassiado; kiticho; ganticha; ado; medashu,6,5,1,0,2018
+33,derassiado; borsho; kiticho; ganticha; kulle; gulumo; chawe; medashu; shawe; kishocho,derassiado; borsho; kiticho; ganticha; kulle; gulumo; chawe; medashu; shawe; kishocho; birra,10,11,0,1,2018
+34,kishicho; kiticho; alaticho; ganticha,kishicho; ado; borsho; kiticho; alaticho; ganticha,4,6,0,2,2018
+35,ganticha; ado; medashu; borsho; kulle; derassiado; awulcho; birra,ganticha; ado; medashu; borsho; derassiado; kiticho; birra,8,7,2,1,2018
+36,ganticha; agena; gadime; medashu; derassiado; made; askala; kiticho; birra; borsho; gulumo,ganticha; agena; gadime; medashu; derassiado; made; askala; kiticho; birra; borsho; gulumo,11,11,0,0,2018
+37,ganticha; ado; damala; kiticho; kulle; medashu; birra; sirriro; askala; huwisho,ganticha; ado; damala; kiticho; kulle; agena; derassiado; gulumo,10,8,5,3,2018
+38,ado; ganticha; genna; birra; agena,ado; ganticha,5,2,3,0,2018
+39,ado; ganticha; birbo,ado; ganticha; birbo; medashu,3,4,0,1,2018
+40,kiticho; medashu; genna; ado; derassiado; ganticha; birbo,kiticho; medashu; genna; ado; derassiado; ganticha; birbo; godalo; birra,7,9,0,2,2018
+41,ganticha; genna red; genna white; ado; birbo; birra,ganticha; genna red; ado; birbo,6,4,2,0,2018
+42,ado; mandicha; gulumo; genna; dowiramo,ado; mandicha; genna; chacho; gosalo; lembula; wanwasa; ganticha,5,8,2,5,2018
+43,mandicha; ado; fella,mandicha; ado; dowiramo,3,3,1,1,2018
+44,bajo; chamero; eppo; choro; chele bocho; nobo; yeko; areko; tambo; achecho; outino,bajo; eppo; choro; chele bocho; nobo; yeko; tambo; achecho; adele bocho,11,9,3,1,2023
+45,chele bocho; nobo; yeko; chamero,chele bocho; nobo; yeko; chamero; bajo; areko,4,6,0,2,2023
+46,quoqore; eppo; chele bocho; choro; sajo; wagu; nobo,quoqore; eppo; chele bocho; sajo; wagu; nobo; ganji bocho; bajo,7,8,1,2,2023
+47,chele bocho; bajo; neche bocho; kecho; outino; choro; wuiyo,chele bocho; bajo; neche bocho; kecho; wuiyo; chamero,7,6,2,1,2023
+48,chele bocho; bajo; outino,chele bocho; outino; neche bocho,3,3,1,1,2023
+49,chele bocho; outino; nobo; bajo; yeko; areko; choro,chele bocho; outino; nobo; adele bocho; adiyo; ganji bocho,7,6,4,3,2023
+50,ganche bocho; areko; adele bocho; bajo; achecho; tambo; choro; nobo,ganche bocho; areko; adele bocho; bajo; achecho; choro; nobo; chele bocho; macha dami; quopho; outino,8,11,1,4,2023
+51,yeko; areko; nobo; outino; gushiro; chele bocho; botecho; ganji bocho; wuiyo; achecho; bajo; neche bocho; eppo,yeko; areko; nobo; outino; gushiro; chele bocho; botecho; ganji bocho; wuiyo; achecho; bajo; neche bocho; eppo,13,13,0,0,2023
+52,neche bocho; chele bocho; nobo; yeko; gushiro; nache areko; macha dami; machara; ciiki areko; bajo; adiyo,neche bocho; chele bocho; nobo; yeko; gushiro; nache areko; macha dami; machara; ciiki areko; bajo; adiyo,11,11,0,0,2023
