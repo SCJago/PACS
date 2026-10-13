@@ -101,7 +101,7 @@ in this pipeline:
 | `gender_balance.csv` | Community, farmers, women | 05, 08 |
 | `landrace_tender_crosswalk_share.csv` | Landrace_ID <-> Landrace_index_tender | 05, 08 |
 | `Landrace_size_data_clean_share.csv` | Landrace-level plant measurements: age, maturity age, pseudostem height and circumference | 08 |
-| `enset_per_farmer_by_community.csv` | Mean enset plants per farmer by community.
+| `enset_per_farmer_by_community.csv` | Mean enset plants per farmer by community | 08 |
 
 ## Pipeline
 
