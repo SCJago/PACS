@@ -6,8 +6,8 @@
 # ----------------------
 #   - landrace_avg_status_landscape.csv   (landscape rarity status per
 #                                           landrace; output of the
-#                                           01_clean_rarity_status.R script)
-#   - Use_data_final.csv                  (trait/use scores per landrace)
+#                                           clean_rarity_status.R script)
+#   - use_data_final_share.csv                  (trait/use scores per landrace)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
@@ -50,7 +50,7 @@ suppressPackageStartupMessages({
 status <- read_csv("landrace_avg_status_landscape.csv") %>%
   clean_names()
 
-traits <- read_csv("Use_data_final.csv") %>%
+traits <- read_csv("use_data_final_share.csv") %>%
   clean_names()
 
 # Inspect names if needed
@@ -64,8 +64,8 @@ names(traits)
 
 # Landrace name column in each data set - edit manually if your column
 # names differ after clean_names()
-status_landrace_col <- "landrace_name"
-traits_landrace_col <- "landrace"
+status_landrace_col <- "landrace_id"
+traits_landrace_col <- "landrace_id"
 
 # Rarity category column, and which categories count as "threatened".
 # Expected categories: Secure, Common, Restricted, Endangered, Critical, Lost
