@@ -4,12 +4,12 @@
 #
 # FILES NEEDED
 # ----------------------
-#   - T1_T2_rarity_assessment_data.csv   (community x landrace survey data,
+#   - T1_T2_rarity_assessment_data_share.csv   (community x landrace survey data,
 #                                          T1 baseline + T2 follow-up)
 #
 # WHAT THIS SCRIPT DOES
 # ----------------------
-# Community-level rarity scores (assigned per landrace per
+# Community-level rarity scores (already assigned per landrace per
 # community, based on proportion of households cultivating it and its
 # abundance within households - Fig 2A) are aggregated across the study
 # landscape into an overall conservation status per landrace, from
@@ -22,17 +22,18 @@
 #
 # OUTPUTS GENERATED
 # ----------------------
-#   T1_fullgrid_with_absences.csv 
+#   T1_fullgrid_with_absences.csv        full community x landrace grid
+#       with absences coded (see section 3).
 #
 #   landrace_avg_status_landscape.csv    one row per landrace: mean
-#       landscape rarity score and landscape_category.
+#       landscape rarity score, presence stats, and landscape_category.
 #
 #   FIG 2C MAIN FIGURE PLOTS: landrace_rarity_bar.png (2Ci) and
 #       p_comm_vs_plantsperhouse_scatt.png (2Cii), plus a combined
 #       side-by-side panel (landscape_rarity_T1_panel.png).
 #
 #   SUPPLEMENT PLOTS: households/plants per household by rarity
-#       category, as boxplots.
+#       category, as boxplots (box_*_by_landscape_rarity_T1.png).
 #
 #   HEADLINE STATS CSVs: landscape_profile_T1.csv (n landraces per
 #       category), threatened_share_T1.csv (share threatened/lost),
@@ -115,24 +116,24 @@ category_to_code <- c(
 # ----------------------------
 # 3. Load data + build T1 landscape rarity grid
 # ----------------------------
-T1_T2_rarity_assessment_data <- read.csv("T1_T2_rarity_assessment_data.csv")
+T1_T2_rarity_assessment_data <- read.csv("T1_T2_rarity_assessment_data_share.csv")
 
 # Master lists of every community and every landrace in the study,
 # used below to build the full Community x Landrace grid
-all_communities <- T1_T2_rarity_assessment_data %>% distinct(Community_name)
-all_landraces   <- T1_T2_rarity_assessment_data %>% distinct(Landrace_name)
+all_communities <- T1_T2_rarity_assessment_data %>% distinct(Community)
+all_landraces   <- T1_T2_rarity_assessment_data %>% distinct(Landrace_ID)
 
 t1_fullgrid <- T1_T2_rarity_assessment_data %>%
   
   # Keep only the T1 columns needed for the rarity assessment
-  select(Community_name, Landrace_name, T1_rarity_status,
+  select(Community, Landrace_ID, T1_rarity_status,
          T1_no_households, T1_Landrace_avr_ind) %>%
   
   # Expand to every Community x Landrace combination. Pairs missing
   # from the raw data are added as new rows, with NA in every other column
   complete(
-    Community_name = all_communities$Community_name,
-    Landrace_name  = all_landraces$Landrace_name
+    Community = all_communities$Community,
+    Landrace_ID = all_landraces$Landrace_ID
   ) %>%
   
   mutate(
@@ -151,7 +152,7 @@ t1_fullgrid <- T1_T2_rarity_assessment_data %>%
   )
 
 landrace_avg_status_landscape <- t1_fullgrid %>%
-  group_by(Landrace_name) %>%
+  group_by(Landrace_ID) %>%
   summarise(
     
     # Mean rarity status across ALL communities (absences = 6),
@@ -276,8 +277,8 @@ ggsave("landscape_rarity_T1_panel.png",
 
 # Attach landscape category to each community x landrace row (T1)
 t1_obs <- T1_T2_rarity_assessment_data %>%
-  left_join(landrace_avg_status_landscape %>% select(Landrace_name, landscape_category),
-            by = "Landrace_name") %>%
+  left_join(landrace_avg_status_landscape %>% select(Landrace_ID, landscape_category),
+            by = "Landrace_ID") %>%
   mutate(
     present_T1      = !is.na(T1_no_households) & T1_no_households > 0,
     T1_total_plants = as.numeric(T1_no_households) * as.numeric(T1_Landrace_avr_ind),
@@ -416,7 +417,7 @@ community_change_plot_data <- T1_T2_rarity_assessment_data %>%
   
   # Average rarity status per Community x Timepoint x Landrace, then
   # bin into whole rarity codes (1-6) for counting landraces per category
-  group_by(Community_name, Timepoint, Landrace_name) %>%
+  group_by(Community, Timepoint, Landrace_ID) %>%
   summarise(avg_status = mean(rarity_status, na.rm = TRUE), .groups = "drop") %>%
   mutate(
     T_rarity_status = case_when(
@@ -433,9 +434,9 @@ community_change_plot_data <- T1_T2_rarity_assessment_data %>%
   
   # Count landraces per Community x Timepoint x rarity code, filling
   # any missing combination with 0 so every facet/category is represented
-  count(Community_name, Timepoint, T_rarity_status, name = "landrace_count") %>%
+  count(Community, Timepoint, T_rarity_status, name = "landrace_count") %>%
   complete(
-    Community_name, Timepoint, T_rarity_status,
+    Community, Timepoint, T_rarity_status,
     fill = list(landrace_count = 0)
   )
 
@@ -452,7 +453,7 @@ p_T1T2_comm_bar <- ggplot(
   scale_fill_manual(values = cols) +
   scale_x_discrete(limits = c("T1", "T2")) +
   scale_y_continuous(expand = c(0), limits = c(0, 27)) +
-  facet_wrap2(~Community_name, ncol = 4, axes = "all") +
+  facet_wrap2(~Community, ncol = 4, axes = "all") +
   theme_classic(base_size = 9) +
   theme(
     axis.title = element_blank(),
