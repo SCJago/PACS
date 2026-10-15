@@ -1054,7 +1054,7 @@ p_interaction <- ggplot(
 
 p_interaction
 
-common_margin <- theme(plot.margin = margin(t = 12, r = 8, b = 12, l = 8))
+common_margin <- theme(plot.margin = margin(t = 2, r = 8, b = 12, l = 8))
 
 p_drought <- p_drought + common_margin
 p_fodder <- p_fodder + common_margin
@@ -1062,10 +1062,27 @@ p_women <- p_women + common_margin
 p_plants <- p_plants + common_margin
 p_interaction <- p_interaction + common_margin
 
+# Row titles
+row_title <- function(label) {
+  wrap_elements(
+    grid::textGrob(
+      label,
+      x = 0, hjust = 0,   # left-aligned; use x = 0.5, hjust = 0.5 to centre
+      gp = gpar(fontsize = 11, fontface = "bold")
+    ),
+    clip = FALSE
+  )
+}
+
 main_panel_updated <-
+  row_title("Resilience traits") /
   (p_drought | p_fodder) /
+  row_title("Cultural drivers") /
   (p_women | p_plants) /
-  p_interaction
+  row_title("Productivity attributes") /
+  p_interaction +
+  plot_layout(heights = c(0.08, 1, 0.08, 1, 0.08, 1))
+
 
 final_effect_plots_updated <-
   wrap_elements(
